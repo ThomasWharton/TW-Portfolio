@@ -29,3 +29,14 @@ The goals of this website are to showcase my journey as a developer and share wh
 There will also be functionality to download my CV and to contact me for further information or discuss working with me.
 The site will have information to highlight my skills and showcase the projects I have previously completed. 
 The aim is to attract future employers and show that I would be a worthy member of their team.
+
+## Requirements
+* Landing page.
+* About section.
+* Skills section.
+* Project showcase section.
+* Contact page.
+* Downloadable CV.
+* Links to social media.
+* Login access for admins only to admin dashboard.
+* CRUD functionality for admins to add, change or delete data.
