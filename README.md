@@ -23,3 +23,9 @@ The webpage will be geared towards showcasing my skills as a developer and shari
 * As an admin, I want CRUD functionality so that I can create, read, update and delete data.
 * As an admin, I want log-in validation so that only super users (admins) have access to the admin dashboard.
 * As an admin, I want templates to pull information from the database so that it can be viewed by general users.
+
+## Website Goals
+The goals of this website are to showcase my journey as a developer and share what I am like as a person.
+There will also be functionality to download my CV and to contact me for further information or discuss working with me.
+The site will have information to highlight my skills and showcase the projects I have previously completed. 
+The aim is to attract future employers and show that I would be a worthy member of their team.
