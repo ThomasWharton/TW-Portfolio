@@ -40,3 +40,15 @@ The aim is to attract future employers and show that I would be a worthy member 
 * Links to social media.
 * Login access for admins only to admin dashboard.
 * CRUD functionality for admins to add, change or delete data.
+
+## Design Choices
+
+### Fonts
+
+[Google Fonts](https://fonts.google.com/ "Google Fonts") has been used to select the fonts for the website. The font selected for the logo was [Playfair Display](https://fonts.google.com/specimen/Playfair+Display "Playfair display") as it is elegant and gives off a professional vibe. [Montserrat](https://fonts.google.com/specimen/Montserrat "Montserrat") was chosen for headings for its clean and striking aesthetic. [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab "Roboto Slab") was chosen for the body text for its readability and how easily it pairs with the other fonts selected.
+
+### Colours
+
+* #2E4052 - Charcoal header/footer
+* #00AEFF - Picton Blue background
+* #FFFFFF - White Text
