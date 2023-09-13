@@ -52,3 +52,8 @@ The aim is to attract future employers and show that I would be a worthy member 
 * #2E4052 - Charcoal header/footer
 * #00AEFF - Picton Blue background
 * #FFFFFF - White Text
+
+### Icons
+
+The icons used for the site were all sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome").
+
