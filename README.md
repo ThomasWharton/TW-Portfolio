@@ -25,6 +25,7 @@ The webpage will be geared towards showcasing my skills as a developer and shari
 * As an admin, I want templates to pull information from the database so that it can be viewed by general users.
 
 ## Website Goals
+
 The goals of this website are to showcase my journey as a developer and share what I am like as a person.
 There will also be functionality to download my CV and to contact me for further information or discuss working with me.
 The site will have information to highlight my skills and showcase the projects I have previously completed. 
@@ -57,3 +58,6 @@ The aim is to attract future employers and show that I would be a worthy member 
 
 The icons used for the site were all sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome").
 
+## Structure
+
+The structure of the site will be simplistic as to not deter the user from engaging with the content. The initial landing page will feature a brief description of myself including a picture. The user will be able to navigate to a page highlighting my skills, one for basic information about myself, one to showcase my projects and a contact form page. The site will be developed with a mobile first mindset and use bootstrap break points to restructure the layout dependent on the device. There will be a backend admin dashboard for the management of data used on the site. This dashboard will only be available to super users. The navbar will contain a login link and once logged in (admins only), the login link will change to one for the admin dashboard.
