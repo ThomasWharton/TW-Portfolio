@@ -72,3 +72,11 @@ class WorkHistory(models.Model):
 
     def __str__(self):
         return self.company_name
+
+
+class Education(models.Model):
+    place_of_study = models.CharField(max_length=150, null=True, blank=True)
+    accreditation = models.CharField(max_length=150, null=True, blank=True)
+
+    def __str__(self):
+        return self.place_of_study
