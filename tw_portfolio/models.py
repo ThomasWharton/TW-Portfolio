@@ -17,7 +17,7 @@ class PersonalDetail(models.Model):
         return self.full_name
 
 
-class Headings(models.Model):
+class Heading(models.Model):
     hero_image = CloudinaryField('image', null=True, blank=True)
     main_heading = models.CharField(max_length=100, null=True, blank=True)
     sub_heading = models.CharField(max_length=100, null=True, blank=True)
@@ -25,3 +25,14 @@ class Headings(models.Model):
 
     def __str__(self):
         return self.main_heading
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    project_image = CloudinaryField('image', null=True, blank=True)
+    project_description = models.CharField(max_length=400, null=True, blank=True)
+    site_link = models.URLField()
+    repo_link = models.URLField()
+
+    def __str__(self):
+        return self.name
