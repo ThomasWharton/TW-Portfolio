@@ -60,4 +60,15 @@ class Social(models.Model):
     social_icon = CloudinaryField('image', null=True, blank=True)
     social_url = models.URLField()
 
+    def __str__(self):
+        return self.social_icon
 
+
+class WorkHistory(models.Model):
+    company_name = models.CharField(max_length=100, null=True, blank=True)
+    start_date = models.DateField()
+    end_date = models.DateField(null=True, blank=True)
+    position = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.company_name
