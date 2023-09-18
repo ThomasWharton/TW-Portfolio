@@ -50,6 +50,7 @@ class Skill(models.Model):
     skill_icon = CloudinaryField('image', null=True, blank=True)
     skill_description = models.CharField(max_length=400, null=True, blank=True)
     skill_competency = models.CharField(max_length=400, null=True, blank=True)
+    category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
