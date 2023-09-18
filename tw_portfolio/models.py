@@ -36,3 +36,20 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SkillCategory(models.Model):
+    category = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.category
+
+
+class Skill(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    skill_icon = CloudinaryField('image', null=True, blank=True)
+    skill_description = models.CharField(max_length=400, null=True, blank=True)
+    skill_competency = models.CharField(max_length=400, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
