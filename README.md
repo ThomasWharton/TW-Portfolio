@@ -50,7 +50,7 @@ The aim is to attract future employers and show that I would be a worthy member 
 
 ### Colours
 
-* #2E4052 - Charcoal header/footer
+* #000080 - Navy Blue header/footer
 * #00AEFF - Picton Blue background
 * #FFFFFF - White Text
 
