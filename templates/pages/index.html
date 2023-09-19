@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
- <h2>Home</h2>
+{% for heading in headings %}
+<div class="container d-flex flex-column align-items-center">
+    <img src="{{ heading.hero_image.url }}" class="hero-image">
+
+    <h2 class="hero-heading text-center">{{ heading.main_heading }}</h2>
+
+    <p class="text-center">{{ heading.brief_description }}</p>
+</div>
+{% endfor %}
 
 {% endblock %}

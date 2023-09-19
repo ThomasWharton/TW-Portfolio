@@ -28,9 +28,18 @@ body {
     font-family: var(--main-font);
 }
 
+footer {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    height: 7rem;
+}
+
+/* Navbar */
+
 .navbar {
     background-color: var(--navy-blue);
     color: var(--white);
+    height: 7rem;
 }
 
 .navbar-brand {
@@ -50,4 +59,19 @@ body {
 
 .nav-link:hover {
     color: var(--picton-blue);
+}
+
+/* Home Page */
+
+.hero-image {
+    margin: 4rem 0 2rem;
+    width: 30rem;
+    height: 30rem;
+    border: 0.2rem solid var(--white);
+    border-radius: 50%;
+}
+
+.hero-heading {
+    font-family: var(--heading-font);
+    font-size: 4rem;
 }
