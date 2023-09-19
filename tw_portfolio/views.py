@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from .models import Heading, PersonalDetail
+from .models import Home, PersonalDetail
 
 
 def display_home(request):
-    headings = Heading.objects.all()
-    context = {'headings': headings}
+    data = Home.objects.all()
+    context = {'data': data}
     return render(request, 'pages/index.html', context)
 
 

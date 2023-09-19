@@ -17,10 +17,9 @@ class PersonalDetail(models.Model):
         return self.full_name
 
 
-class Heading(models.Model):
+class Home(models.Model):
     hero_image = CloudinaryField('image', null=True, blank=True)
     main_heading = models.CharField(max_length=100, null=True, blank=True)
-    sub_heading = models.CharField(max_length=100, null=True, blank=True)
     brief_description = models.CharField(max_length=400, null=True, blank=True)
 
     def __str__(self):

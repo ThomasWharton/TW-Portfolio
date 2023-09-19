@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import PersonalDetail, Heading, Skill, SkillCategory, Project, Social, WorkHistory, Education
+from .models import PersonalDetail, Home, Skill, SkillCategory, Project, Social, WorkHistory, Education
 
 
 admin.site.register(PersonalDetail)
-admin.site.register(Heading)
+admin.site.register(Home)
 admin.site.register(Skill)
 admin.site.register(SkillCategory)
 admin.site.register(Project)
