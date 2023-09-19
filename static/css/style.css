@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display:wght@600&family=Roboto+Slab&display=swap');
+
+/* Global Styling */
+
+:root {
+    --navy-blue: #000080;
+    --picton-blue: #00AEFF;
+    --white: #fff;
+    --logo: 'Playfair Display', serif;
+    --heading-font: 'Montserrat', sans-serif;
+    --main-font: 'Roboto Slab', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--picton-blue);
+    color: var(--white);
+    font-size: 1.6rem;
+    font-family: var(--main-font);
+}
+
+.navbar {
+    background-color: var(--navy-blue);
+    color: var(--white);
+}
+
+.navbar-brand {
+    color: var(--white);
+    font-family: var(--logo);
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+.nav-link {
+    color: var(--white);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--picton-blue);
+}
+
+.nav-link:hover {
+    color: var(--picton-blue);
+}
