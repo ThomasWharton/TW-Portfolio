@@ -64,7 +64,7 @@ footer {
 /* Home Page */
 
 .hero-image {
-    margin: 4rem 0 2rem;
+    margin: 6rem 0 2rem;
     width: 30rem;
     height: 30rem;
     border: 0.2rem solid var(--white);
@@ -73,5 +73,12 @@ footer {
 
 .hero-heading {
     font-family: var(--heading-font);
-    font-size: 4rem;
+    font-size: 4.8rem;
+    padding: 2rem;
+}
+
+.home-description {
+    padding: 2rem;
+    margin-top: 2rem;
+    font-size: 2.4rem;
 }
