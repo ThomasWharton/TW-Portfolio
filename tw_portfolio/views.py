@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic.base import TemplateView
 from .models import Home, PersonalDetail
 from django.http import HttpResponseRedirect
 
@@ -14,7 +13,6 @@ def check_admin(fn):
     return wrapper
 
 
-
 def display_home(request):
     data = Home.objects.all()
     context = {'data': data}
@@ -25,3 +23,8 @@ def display_about(request):
     details = PersonalDetail.objects.all()
     context = {'details': details}
     return render(request, 'pages/about.html', context)
+
+
+@check_admin
+def display_dashboard(request):
+    return render(request, 'pages/dashboard.html')
