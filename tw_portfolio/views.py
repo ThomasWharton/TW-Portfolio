@@ -1,6 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.base import TemplateView
 from .models import Home, PersonalDetail
+from django.http import HttpResponseRedirect
+
+
+def check_admin(fn):
+    def wrapper(request):
+        if request.user.is_superuser:
+            return fn(request)
+        else:
+            return HttpResponseRedirect('/')
+
+    return wrapper
+
 
 
 def display_home(request):
