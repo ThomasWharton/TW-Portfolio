@@ -26,6 +26,15 @@ body {
     color: var(--white);
     font-size: 1.6rem;
     font-family: var(--main-font);
+    margin-bottom:7rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    font-size: 4.8rem;
+    padding: 2rem;
 }
 
 footer {
@@ -69,12 +78,6 @@ footer {
     height: 30rem;
     border: 0.2rem solid var(--white);
     border-radius: 50%;
-}
-
-.hero-heading {
-    font-family: var(--heading-font);
-    font-size: 4.8rem;
-    padding: 2rem;
 }
 
 .home-description {
