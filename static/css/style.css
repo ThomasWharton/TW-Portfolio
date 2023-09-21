@@ -31,16 +31,20 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: var(--heading-font);
-    font-size: 4.8rem;
-    padding: 2rem;
 }
 
 footer {
     background-color: var(--navy-blue);
     color: var(--white);
     height: 7rem;
+}
+
+.heading {
+    font-size: 4.8rem;
+    padding: 2rem;
 }
 
 /* Navbar */
@@ -96,4 +100,5 @@ footer {
 
 .card {
     margin: 1rem;
+    background-color: var(--navy-blue);
 }
