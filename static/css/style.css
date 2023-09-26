@@ -47,6 +47,11 @@ footer {
     padding: 2rem;
 }
 
+hr {
+    border-top: 1px solid var(--white);
+    opacity: 1;
+}
+
 /* Navbar */
 
 .navbar {
