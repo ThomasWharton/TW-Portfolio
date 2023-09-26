@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Home, PersonalDetail
+from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
 from django.http import HttpResponseRedirect
 from .forms import PersonalDetailForm
 
@@ -25,6 +25,20 @@ def display_about(request):
     context = {'details': details}
     return render(request, 'pages/about.html', context)
 
+
+def display_all(request):
+    detail = PersonalDetail.objects.all()
+    skill = Skill.objects.all()
+    category = SkillCategory.objects.all()
+    project = Project.objects.all()
+    data = Home.objects.all()
+    context = {
+        'detail': detail, 'data': data, 'project': project, 'skill': skill, 'category': category
+        }
+    if request.path == "home/":
+        return render(request, 'pages/index.html', context )
+    else: 
+        return render(request, 'pages/index.html', context )
 
 @check_admin
 def display_dashboard(request):

@@ -1,3 +1,10 @@
 <div class="container">
     <h2 class="heading text-center">About Me</h2>
+    {% for detail in detail %}
+    <div class="col-md-4">
+        <p>Full Name:</p>
+        <p>{{ detail.full_name }}</p>
+    </div>
+    {% endfor %}
+
 </div>

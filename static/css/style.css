@@ -128,3 +128,8 @@ hr {
     color: var(--white);
     font-size: 2.5rem;
 }
+
+.edit-form label {
+    font-family: var(--main-font);
+    font-size: 2rem;
+}

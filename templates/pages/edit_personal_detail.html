@@ -4,30 +4,32 @@
 
 {% block content %}
 <div class="container d-flex justify-content-center">
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" class="edit-form" enctype="multipart/form-data">
         {% csrf_token %}
         <h2 class="heading">Edit Personal Details</h2>
-        <div>
-            {{ personal_detail_form.detail_paragraph_1.label_tag }}
-            {{ personal_detail_form.detail_paragraph_1 }}
+        <div class="col text-left">
+            <div class="row mb-4 detail-paragraph-input">
+                {{ personal_detail_form.detail_paragraph_1.label_tag }}
+                {{ personal_detail_form.detail_paragraph_1 }}
+            </div>
+            <div class="mb-4">
+                {{ personal_detail_form.detail_paragraph_2.label_tag }}
+                {{ personal_detail_form.detail_paragraph_2 }}
+            </div>
+            <div class="mb-4">
+                {{ personal_detail_form.full_name.label_tag }}
+                {{ personal_detail_form.full_name }}
+            </div>
+            <div class="mb-4">
+                {{ personal_detail_form.nationality.label_tag }}
+                {{ personal_detail_form.nationality }}
+            </div>
+            <div class="mb-4">
+                {{ personal_detail_nationality_flag.label_tag }}
+                {{ personal_detail_form.nationality_flag }}
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </div>
-        <div>
-            {{ personal_detail_form.detail_paragraph_2.label_tag }}
-            {{ personal_detail_form.detail_paragraph_2 }}
-        </div>
-        <div>
-            {{ personal_detail_form.full_name.label_tag }}
-            {{ personal_detail_form.full_name }}
-        </div>
-        <div>
-            {{ personal_detail_form.nationality.label_tag }}
-            {{ personal_detail_form.nationality }}
-        </div>
-        <div>
-            {{ personal_detail_nationality_flag.label_tag }}
-            {{ personal_detail_form.nationality_flag }}
-        </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
     </form>
 </div>
 
