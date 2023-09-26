@@ -25,5 +25,6 @@ urlpatterns = [
     path('', views.display_home, name="home"),
     path('about/', views.display_about, name="about"),
     path('dashboard/', views.display_dashboard, name="dashboard"),
+    path('edit-personal-detail', views.display_edit_personal_detail, name="edit-personal-detail"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
