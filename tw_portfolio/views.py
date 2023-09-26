@@ -36,9 +36,10 @@ def display_all(request):
         'detail': detail, 'data': data, 'project': project, 'skill': skill, 'category': category
         }
     if request.path == "home/":
-        return render(request, 'pages/index.html', context )
-    else: 
-        return render(request, 'pages/index.html', context )
+        return render(request, 'pages/index.html', context)
+    else:
+        return render(request, 'pages/index.html', context)
+
 
 @check_admin
 def display_dashboard(request):
@@ -54,7 +55,7 @@ def display_edit_personal_detail(request):
         personal_detail_form = PersonalDetailForm(request.POST, request.FILES, instance=detail)
         if personal_detail_form.is_valid():
             personal_detail_form.save()
-            return redirect('edit-personal-detail')
+            return redirect('dashboard')
     else:
         personal_detail_form = PersonalDetailForm(instance=detail)
 
