@@ -53,7 +53,7 @@ class Skill(models.Model):
 
 
 class Social(models.Model):
-    social_icon = CloudinaryField('image', null=True, blank=True)
+    social_icon = models.CharField(max_length=50, null=True, blank=True)
     social_url = models.URLField()
 
     def __str__(self):
