@@ -52,14 +52,6 @@ class Skill(models.Model):
         return self.name
 
 
-class Social(models.Model):
-    social_icon = models.CharField(max_length=50, null=True, blank=True)
-    social_url = models.URLField()
-
-    def __str__(self):
-        return self.social_icon
-
-
 class WorkHistory(models.Model):
     company_name = models.CharField(max_length=100, null=True, blank=True)
     start_date = models.DateField()
