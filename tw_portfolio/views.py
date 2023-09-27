@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
 from django.http import HttpResponseRedirect
-from .forms import PersonalDetailForm
+from .forms import PersonalDetailForm, SkillForm
 
 
 def check_admin(fn):
@@ -20,10 +20,10 @@ def display_home(request):
     return render(request, 'pages/index.html', context)
 
 
-def display_about(request):
-    details = PersonalDetail.objects.all()
-    context = {'details': details}
-    return render(request, 'pages/about.html', context)
+# def display_about(request):
+#     details = PersonalDetail.objects.all()
+#     context = {'details': details}
+#     return render(request, 'pages/about.html', context)
 
 
 def display_all(request):
@@ -48,20 +48,35 @@ def display_dashboard(request):
 
 @check_admin
 def display_edit_personal_detail(request):
-    detail = get_object_or_404(PersonalDetail)
-    data = PersonalDetail.objects.all()
+    data = get_object_or_404(PersonalDetail)
+    detail = PersonalDetail.objects.all()
 
     if request.method == 'POST':
-        personal_detail_form = PersonalDetailForm(request.POST, request.FILES, instance=detail)
+        personal_detail_form = PersonalDetailForm(request.POST, request.FILES, instance=data)
         if personal_detail_form.is_valid():
             personal_detail_form.save()
             return redirect('dashboard')
     else:
-        personal_detail_form = PersonalDetailForm(instance=detail)
+        personal_detail_form = PersonalDetailForm(instance=data)
 
     context = {
-        'data': data,
+        'detail': detail,
         'personal_detail_form': personal_detail_form
     }
 
     return render(request, 'pages/edit_personal_detail.html', context)
+
+
+@check_admin
+def display_add_skill(request):
+    if request.method == 'POST':
+        skill_form = SkillForm(request.POST)
+        if skill_form.is_valid():
+            skill_form.save()
+            return redirect('dashboard')
+
+    context = {
+        'skill_form': SkillForm(),
+    }
+
+    return render(request, 'pages/add_skill.html', context)
