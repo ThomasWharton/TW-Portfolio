@@ -19,9 +19,11 @@ from django.urls import path, include
 from tw_portfolio import views
 from django.conf import settings
 from django.conf.urls.static import static
+from allauth.account import views as allauth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', views.display_all, name='all'),
     path('home/', views.display_all, name="home"),
     path('dashboard/', views.display_dashboard, name="dashboard"),
