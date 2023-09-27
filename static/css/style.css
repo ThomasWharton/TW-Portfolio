@@ -75,8 +75,16 @@ hr {
     color: var(--picton-blue);
 }
 
+.navbar-brand:hover,
 .nav-link:hover {
     color: var(--picton-blue);
+}
+
+.navbar-collapse {
+    background-color: var(--navy-blue);
+    margin-top: 1.4rem;
+    text-align: center;
+    width: 100%;
 }
 
 /* Home Page */
@@ -198,4 +206,9 @@ hr {
 .form label {
     font-family: var(--main-font);
     font-size: 2rem;
+}
+
+.form-control {
+    font-size: 1.6rem;
+    font-family: var(--main-font);
 }
