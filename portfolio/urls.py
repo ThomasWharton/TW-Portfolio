@@ -29,6 +29,7 @@ urlpatterns = [
     path('dashboard/', views.display_dashboard, name="dashboard"),
     path('edit-home/', views.display_edit_home, name="edit-home"),
     path('edit-personal-detail', views.display_edit_personal_detail, name="edit-personal-detail"),
-    path('add-skill', views.display_add_skill, name="add-skill")
+    path('add-skill', views.display_add_skill, name="add-skill"),
+    path('add-project', views.display_add_project, name="add-project")
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

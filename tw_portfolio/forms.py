@@ -18,3 +18,15 @@ class SkillForm(forms.ModelForm):
     class Meta:
         model = Skill
         fields = '__all__'
+
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = '__all__'
+
+
+class WorkHistoryForm(forms.ModelForm):
+    class Meta:
+        model = WorkHistory
+        fields = '__all__'

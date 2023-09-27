@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
 from django.http import HttpResponseRedirect
-from .forms import PersonalDetailForm, SkillForm, HomeForm
+from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm
 
 
 def check_admin(fn):
@@ -26,8 +26,17 @@ def display_all(request):
     category = SkillCategory.objects.all()
     project = Project.objects.all()
     data = Home.objects.all()
+    work_history = WorkHistory.objects.all()
+    education = Education.objects.all()
+
     context = {
-        'detail': detail, 'data': data, 'project': project, 'skill': skill, 'category': category
+        'detail': detail,
+        'data': data,
+        'project': project,
+        'skill': skill,
+        'category': category,
+        'work_history': work_history,
+        'education': education
         }
     if request.path == "home/":
         return render(request, 'pages/index.html', context)
@@ -95,3 +104,18 @@ def display_add_skill(request):
     }
 
     return render(request, 'pages/add_skill.html', context)
+
+
+@check_admin
+def display_add_project(request):
+    if request.method == 'POST':
+        project_form = ProjectForm(request.POST)
+        if project_form.is_valid():
+            project_form.save()
+            return redirect('dashboard')
+
+    context = {
+        'project_form': ProjectForm(),
+    }
+
+    return render(request, 'pages/add_project.html', context)
