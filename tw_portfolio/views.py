@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
 from django.http import HttpResponseRedirect
-from .forms import PersonalDetailForm, SkillForm
+from .forms import PersonalDetailForm, SkillForm, HomeForm
 
 
 def check_admin(fn):
@@ -38,6 +38,27 @@ def display_all(request):
 @check_admin
 def display_dashboard(request):
     return render(request, 'pages/dashboard.html')
+
+
+@check_admin
+def display_edit_home(request):
+    data = get_object_or_404(Home)
+    detail = Home.objects.all()
+
+    if request.method == 'POST':
+        home_form = HomeForm(request.POST, request.FILES, instance=data)
+        if home_form.is_valid():
+            home_form.save()
+            return redirect('dashboard')
+    else:
+        home_form = HomeForm(instance=data)
+
+    context = {
+        'detail': detail,
+        'home_form': home_form
+    }
+
+    return render(request, 'pages/edit_home.html', context)
 
 
 @check_admin
