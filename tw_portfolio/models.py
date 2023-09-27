@@ -9,6 +9,7 @@ class PersonalDetail(models.Model):
     full_name = models.CharField(max_length=150, unique=False)
     nationality = models.CharField(max_length=150, unique=False)
     nationality_flag = CloudinaryField('image', null=True, blank=True)
+    residence = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.full_name
