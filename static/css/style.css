@@ -111,6 +111,53 @@ hr {
     height: 2rem;
 }
 
+.timeline-item {
+    padding: 4em 2em 0em 2em;
+    position: relative;
+    color: #fafafa;
+    border-left: 1px solid;
+}
+
+.timeline-heading {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+}
+
+.timeline-p {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: attr(data-dates);
+    position: absolute;
+    left: 2.5em;
+    top: 3em;
+    display: block;
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: .8em;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-item::after {
+    width: 12px;
+    height: 12px;
+    display: block;
+    top: 2.4em;
+    position: absolute;
+    left: -6px;
+    border-radius: 12px;
+    content: '';
+    background: #fafafa;
+}
+
+.history-row {
+    justify-content: space-evenly;
+    margin: 2rem 0 2rem;
+    gap: 2rem;
+}
+
 /* Dashboard */
 
 .card-container {

@@ -23,6 +23,40 @@
             </div>
         </div>
     </div>
+    <div class="row history-row">
+        <div class="col-md-4">
+            <h2 class="timeline-heading text-center">Education</h2>
+            {% for education in education %}
+                {% if education.end_date == null %}
+                    <div class="timeline-item" data-dates="{{ education.start_date }} -  Present">
+                        <h3>{{ education.place_of_study }}</h3>
+                        <p class="timeline-p">{{ education.accreditation }}</p>
+                    </div>
+                {% else %}
+                    <div class="timeline-item" data-dates="{{ education.start_date }} -  {{ education.end_date }}">
+                        <h3>{{ education.place_of_study }}</h3>
+                        <p class="timeline-p">{{ education.accreditation }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h2 class="timeline-heading text-center">Work History</h2>
+            {% for work_history in work_history %}
+                {% if work_history.end_date == null %}
+                    <div class="timeline-item" data-dates="{{ work_history.start_date }} -  Present">
+                        <h3>{{ work_history.company_name }}</h3>
+                        <p class="timeline-p">{{ work_history.position }}</p>
+                    </div>
+                {% else %}
+                    <div class="timeline-item" data-dates="{{ work_history.start_date }} -  {{ work_history.end_date }}">
+                        <h3>{{ work_history.company_name }}</h3>
+                        <p class="timeline-p">{{ work_history.position }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
     {% endfor %}
 
 </div>
