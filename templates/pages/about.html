@@ -1,16 +1,27 @@
 <div class="container">
     <h2 class="heading text-center">About Me</h2>
     {% for detail in detail %}
-    <div class="col-md-4">
-        <div class="row">
-            <p class="about-p">Full Name:</p>
-            <p class="about-p">{{ detail.full_name }}</p>
+    <div class="row about-row">
+        <div class="col-md-4">
+            <div class="row">
+                <p class="about-p">Full Name:</p>
+                <p class="about-p">{{ detail.full_name }}</p>
+            </div>
+            <div class="row">
+                <p class="about-p">Nationality:</p>
+                <p class="about-p">{{ detail.nationality }} <image src="{{ detail.nationality_flag.url }}" class="nationality-flag"></image></p>
+            </div>
+            <div class="row">
+                <p class="about-p">Residence</p>
+                <p class="about-p">{{ detail.residence }}</p>
+            </div>        
         </div>
-        <div class="row">
-            <p class="about-p">Nationality:</p>
-            <p class="about-p">{{ detail.nationality }} <image src="{{ detail.nationality_flag.url }}" class="nationality-flag"></image></p>
+        <div class="col-md-4 justify-content-end">
+            <div class="row">
+                <p class="about-p">{{ detail.detail_paragraph_1 }}</p>
+                <p class="about-p">{{ detail.detail_paragraph_2 }}</p>
+            </div>
         </div>
-        
     </div>
     {% endfor %}
 

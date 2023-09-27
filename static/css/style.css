@@ -97,6 +97,11 @@ hr {
 
 /* About Section */
 
+.about-row {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .about-p {
     font-size: 2rem;
 }
