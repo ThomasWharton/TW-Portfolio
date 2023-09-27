@@ -30,3 +30,9 @@ class WorkHistoryForm(forms.ModelForm):
     class Meta:
         model = WorkHistory
         fields = '__all__'
+
+
+class EducationForm(forms.ModelForm):
+    class Meta:
+        model = Education
+        fields = '__all__'

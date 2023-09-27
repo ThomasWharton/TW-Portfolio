@@ -1,0 +1,17 @@
+{% extends "dashboard_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <form method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="heading">Add Education</h2>
+        <div class="col text-left">
+             {{ education_form|crispy }}
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

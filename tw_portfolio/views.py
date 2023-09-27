@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
 from django.http import HttpResponseRedirect
-from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm
+from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm, WorkHistoryForm, EducationForm
 
 
 def check_admin(fn):
@@ -119,3 +119,33 @@ def display_add_project(request):
     }
 
     return render(request, 'pages/add_project.html', context)
+
+
+@check_admin
+def display_add_work_history(request):
+    if request.method == 'POST':
+        work_history_form = WorkHistoryForm(request.POST)
+        if work_history_form.is_valid():
+            work_history_form.save()
+            return redirect('dashboard')
+
+    context = {
+        'work_history_form': WorkHistoryForm(),
+    }
+
+    return render(request, 'pages/add_work_history.html', context)
+
+
+@check_admin
+def display_add_education(request):
+    if request.method == 'POST':
+        education_form = EducationForm(request.POST)
+        if education_form.is_valid():
+            education_form.save()
+            return redirect('dashboard')
+
+    context = {
+        'education_form': EducationForm(),
+    }
+
+    return render(request, 'pages/add_education.html', context)
