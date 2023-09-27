@@ -20,12 +20,6 @@ def display_home(request):
     return render(request, 'pages/index.html', context)
 
 
-# def display_about(request):
-#     details = PersonalDetail.objects.all()
-#     context = {'details': details}
-#     return render(request, 'pages/about.html', context)
-
-
 def display_all(request):
     detail = PersonalDetail.objects.all()
     skill = Skill.objects.all()
