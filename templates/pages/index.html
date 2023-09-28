@@ -2,13 +2,15 @@
 
 {% block content %}
 {% for data in data %}
-<div class="container d-flex flex-column align-items-center">
-    <img src="{{ data.hero_image.url }}" class="hero-image">
+<section id="home">
+    <div class="container d-flex flex-column align-items-center">
+        <img src="{{ data.hero_image.url }}" class="hero-image">
 
-    <h2 class="heading text-center">{{ data.main_heading }}</h2>
+        <h2 class="heading text-center">{{ data.main_heading }}</h2>
 
-    <p class="text-center home-description">{{ data.brief_description }}</p>
-</div>
+        <p class="text-center home-description">{{ data.brief_description }}</p>
+    </div>
+</section>
 <hr>
 
 <section id="about">
