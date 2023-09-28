@@ -20,8 +20,8 @@
                 {% for project in projects %}
                     <div class="card col-md-3 project-card">
                         <div class="card-body">
-                            <a href="{% url 'edit-project' project.id %}">
-                                <h5 class="card-title project-title">{{ project.name }}</h5>
+                            <a href="{% url 'edit-project' project.id %}" class="form-a">
+                                <h4>{{ project.name }}</h4>
                             </a>
                     </div>
                   </div>
