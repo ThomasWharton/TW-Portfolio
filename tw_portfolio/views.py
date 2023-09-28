@@ -5,9 +5,9 @@ from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm, WorkHis
 
 
 def check_admin(fn):
-    def wrapper(request):
+    def wrapper(request, *args, **kwargs):
         if request.user.is_superuser:
-            return fn(request)
+            return fn(request, *args, **kwargs)
         else:
             return HttpResponseRedirect('/')
 
@@ -34,7 +34,7 @@ def display_all(request):
         'data': data,
         'projects': projects,
         'skills': skills,
-        'category': category,
+        'categories': category,
         'work_history': work_history,
         'education': education
         }
@@ -160,18 +160,20 @@ def display_add_education(request):
 
 @check_admin
 def display_edit_skill(request, skill_id=None):
+    print(skill_id)
     skills = Skill.objects.all()
     category = SkillCategory.objects.all()
 
     if skill_id:
-        skill = get_object_or_404(Skill, id=skill_id)
+        skill = get_object_or_404(Skill, pk=skill_id)
+        print(skill)
         skill_form = SkillForm(instance=skill)
     else:
         skill_form = SkillForm()
 
     if request.method == 'POST':
         if skill_id:
-            skill = get_object_or_404(Skill, id=skill_id)
+            skill = get_object_or_404(Skill, pk=skill_id)
             skill_form = SkillForm(request.POST, request.FILES, instance=skill)
         else:
             skill_form = SkillForm(request.POST, request.FILES)
@@ -185,9 +187,42 @@ def display_edit_skill(request, skill_id=None):
 
     context = {
         'skill': skill if skill_id else None,
-        'skill_form': SkillForm(),
+        'skill_form': skill_form,
         'category': category,
         'skills': skills
     }
 
     return render(request, 'pages/edit_skill.html', context)
+
+
+@check_admin
+def display_edit_project(request, project_id=None):
+    projects = Project.objects.all()
+
+    if project_id:
+        project = get_object_or_404(Project, pk=project_id)
+        project_form = ProjectForm(instance=project)
+    else:
+        project_form = ProjectForm()
+
+    if request.method == 'POST':
+        if project_id:
+            project = get_object_or_404(Project, pk=project_id)
+            project_form = ProjectForm(request.POST, request.FILES, instance=project)
+        else:
+            project_form = ProjectForm(request.POST, request.FILES)
+
+        if project_form.is_valid():
+            project_form.save()
+            if project_id:
+                return redirect('edit-project', project_id=project.id)
+            else:
+                return redirect('edit-project')
+
+    context = {
+        'project': project if project_id else None,
+        'project_form': project_form,
+        'projects': projects
+    }
+
+    return render(request, 'pages/edit_project.html', context)

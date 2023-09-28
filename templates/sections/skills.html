@@ -1,20 +1,27 @@
 <div class="container">
     <h2 class="heading text-center">Skills</h2>
-    <div class="col-md-5 box-border">
-        <table>
-            <tbody>
-            {% for category in category %}
-                <tr>
-                    <th class="category-name">{{ category.category }}</th>
-                    {% for skill in skills %}
-                    {% if skill.category == category %}
-                    <td><img class="skill-icon" src="{{ skill.skill_icon }}" alt="{{ skill.skill_name }}"></td>
-                    {% endif %}
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <div class="row skill-row">
+        <div class="col-md-5 box-border">
+            <table>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <th class="category-name">{{ category.category }}</th>
+                        {% for skill in skills %}
+                        {% if skill.category == category %}
+                        <td><img class="skill-icon" src="{{ skill.skill_icon }}" alt="{{ skill.skill_name }}"></td>
+                        {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5 box-border text-center" id="skill-description-box">
+            <h3 id="skill-name" class="hidden"></h3>
+            <p class="skill-p">Click on the different skills in the table to find out more!</p>
+            <p id="skill-description" class="hidden skill-p"></p>
+        </div>
     </div>
     
 </div>

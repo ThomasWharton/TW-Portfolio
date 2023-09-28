@@ -185,6 +185,10 @@ hr {
 
 /* Skills Section */
 
+.skill-row {
+    align-items: center;
+    justify-content: space-evenly
+}
 .skills-table {
     margin-top: 2rem;
 }
