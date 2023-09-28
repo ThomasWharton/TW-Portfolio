@@ -8,6 +8,10 @@ class HomeForm(forms.ModelForm):
     class Meta:
         model = Home
         fields = '__all__'
+        widgets = {
+            'main_heading': forms.TextInput(attrs={'style': 'max-width:30rem'}),
+            'brief_description': forms.Textarea(attrs={'rows': 3, 'cols': 60}),
+        }
 
 
 class PersonalDetailForm(forms.ModelForm):
@@ -33,12 +37,21 @@ class SkillForm(forms.ModelForm):
     class Meta:
         model = Skill
         fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={'style': 'max-width:20rem'}),
+            'skill_description': forms.Textarea(attrs={'rows': 3, 'cols': 60}),
+            'skill_competency': forms.TextInput(attrs={'style': 'max-width:20rem'}),
+        }
 
 
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={'style': 'max-width:20rem'}),
+            'project_description': forms.Textarea(attrs={'rows': 3, 'cols': 60}),
+        }
 
 
 class WorkHistoryForm(forms.ModelForm):

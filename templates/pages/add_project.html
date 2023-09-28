@@ -4,14 +4,16 @@
 
 {% block content %}
 <div class="container d-flex justify-content-center">
-    <form method="POST" class="form" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h2 class="heading">Add Project</h2>
-        <div class="col text-left">
-             {{ project_form|crispy }}
-            <button type="submit" class="btn btn-primary">Add</button>
-        </div>
-    </form>
+    <div class="col-md-8">
+        <h2 class="heading text-center">Add Project</h2>
+        <form method="POST" class="form" enctype="multipart/form-data">
+            {% csrf_token %}        
+            <div class="col text-left">
+                {{ project_form|crispy }}
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
