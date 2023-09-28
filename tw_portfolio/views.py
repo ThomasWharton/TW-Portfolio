@@ -160,13 +160,11 @@ def display_add_education(request):
 
 @check_admin
 def display_edit_skill(request, skill_id=None):
-    print(skill_id)
     skills = Skill.objects.all()
-    category = SkillCategory.objects.all()
+    categories = SkillCategory.objects.all()
 
     if skill_id:
         skill = get_object_or_404(Skill, pk=skill_id)
-        print(skill)
         skill_form = SkillForm(instance=skill)
     else:
         skill_form = SkillForm()
@@ -185,7 +183,7 @@ def display_edit_skill(request, skill_id=None):
     context = {
         'skill': skill if skill_id else None,
         'skill_form': skill_form,
-        'category': category,
+        'categories': categories,
         'skills': skills
     }
 
@@ -280,3 +278,30 @@ def display_edit_education(request, education_id=None):
     }
 
     return render(request, 'pages/edit_education.html', context)
+
+
+@check_admin
+def display_delete_skill(request, skill_id=None):
+    skills = Skill.objects.all()
+    categories = SkillCategory.objects.all()
+
+    if skill_id:
+        skill = get_object_or_404(Skill, pk=skill_id)
+        skill_form = SkillForm(instance=skill)
+    else:
+        skill_form = SkillForm()
+
+    if request.method == 'POST':
+        if skill_id:
+            skill.delete()
+            return redirect('dashboard')
+
+
+    context = {
+        'skill': skill if skill_id else None,
+        'skill_form': skill_form,
+        'categories': categories,
+        'skills': skills
+    }
+
+    return render(request, 'pages/delete_skill.html', context)

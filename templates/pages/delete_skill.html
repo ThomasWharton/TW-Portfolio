@@ -5,13 +5,13 @@
 {% block content %}
 <div class="container d-flex justify-content-center">
     <div class="row form-row">
-        <h2 class="heading text-center">Edit Skill</h2>
+        <h2 class="heading text-center">Delete Skill</h2>
         <div class="col-md-5">        
             <form method="POST" class="form" enctype="multipart/form-data">
                 {% csrf_token %}            
                 <div class="col text-left">
                     {{ skill_form|crispy }}
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
             </form>
         </div>
@@ -24,7 +24,7 @@
                         {% for skill in skills %}
                         {% if skill.category == category %}
                         <td>
-                            <a href="{% url 'edit-skill' skill.id %}">
+                            <a href="{% url 'delete-skill' skill.id %}">
                                 <img class="skill-icon" src="{{ skill.skill_icon }}" alt="{{ skill.skill_name }}">
                             </a>
                         </td>
