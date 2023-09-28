@@ -108,13 +108,16 @@ def display_add_skill(request):
 
 @check_admin
 def display_add_project(request):
+    project = Project.objects.all()
     if request.method == 'POST':
         project_form = ProjectForm(request.POST)
         if project_form.is_valid():
+            project.project_image = request.FILES['project_image']
             project_form.save()
             return redirect('dashboard')
 
     context = {
+        'project': project,
         'project_form': ProjectForm(),
     }
 
