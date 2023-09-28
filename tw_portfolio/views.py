@@ -305,3 +305,27 @@ def display_delete_skill(request, skill_id=None):
     }
 
     return render(request, 'pages/delete_skill.html', context)
+
+
+@check_admin
+def display_delete_project(request, project_id=None):
+    projects = Project.objects.all()
+
+    if project_id:
+        project = get_object_or_404(Project, pk=project_id)
+        project_form = ProjectForm(instance=project)
+    else:
+        project_form = ProjectForm()
+
+    if request.method == 'POST':
+        if project_id:
+            project.delete()
+            return redirect('dashboard')
+
+    context = {
+        'project': project if project_id else None,
+        'project_form': project_form,
+        'projects': projects
+    }
+
+    return render(request, 'pages/delete_project.html', context)
