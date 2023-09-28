@@ -197,6 +197,34 @@ hr {
     padding: 1rem;
 }
 
+/* Project Section */
+
+.project-image {
+    width: 100%;
+    height: 50%;
+}
+
+.project-card {
+    width: 30rem;
+    align-items: center;
+    text-align: center;
+}
+
+.project-title {
+    font-family: var(--heading-font);
+    font-size: 2.4rem;
+}
+
+.button-row {
+    width: 100%;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.project-btn {
+    width: 50%
+}
+
 /* Dashboard */
 
 .card-container {
