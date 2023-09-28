@@ -155,7 +155,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-thomaswhart-twportfolio-ddtop3vld3y.ws-eu105.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-thomaswhart-twportfolio-ddtop3vld3y.ws-eu105.gitpod.io', 'https://tw-portfolio-f81a23484316.herokuapp.com]
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_SECURE = True
