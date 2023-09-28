@@ -105,9 +105,16 @@ hr {
 
 /* About Section */
 
+.about-border {
+    border: solid 0.3rem var(--white);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
 .about-row {
     justify-content: space-evenly;
     align-items: center;
+    margin: 0;
 }
 
 .about-p {
