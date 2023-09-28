@@ -6,6 +6,8 @@ const skillName = document.querySelector('#skill-name');
 const skillDescription = document.querySelector('#skill-description');
 const skillHeadingIcon = document.querySelector('#skill-heading-icon')
 
+
+// Take icon info and replace elements in skill description box
 const updateInfo = (name, description, image) => {
     skillHeadingIcon.src = image;
     skillName.innerHTML = name;
@@ -16,6 +18,7 @@ const updateInfo = (name, description, image) => {
     defaultSkill.classList.add('hidden');
 };
 
+// Pull info from skill icons when clicked
 const pullIconInfo = () => {
     skillIcons.forEach(skillIcon => {
         skillIcon.addEventListener('click', function () {
