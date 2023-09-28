@@ -6,7 +6,7 @@
         {% for category in category %}
             <tr>
                 <th class="category-name">{{ category.category }}</th>
-                {% for skill in skill %}
+                {% for skill in skills %}
                 {% if skill.category == category %}
                 <td><img class="skill-icon" src="{{ skill.skill_icon }}" alt="{{ skill.skill_name }}"></td>
                 {% endif %}

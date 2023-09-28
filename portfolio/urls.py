@@ -32,6 +32,8 @@ urlpatterns = [
     path('add-skill', views.display_add_skill, name="add-skill"),
     path('add-project', views.display_add_project, name="add-project"),
     path('add-work-history', views.display_add_work_history, name="add-work-history"),
-    path('add-education', views.display_add_education, name="add-education")
+    path('add-education', views.display_add_education, name="add-education"),
+    path('edit-skill', views.display_edit_skill, name="edit-skill"),
+    path('edit-skill/<skill_id>/', views.display_edit_skill, name="edit-skill"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

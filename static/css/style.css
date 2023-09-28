@@ -271,3 +271,7 @@ hr {
     font-size: 1.6rem;
     font-family: var(--main-font);
 }
+
+.form-row {
+    justify-content: space-evenly;
+}

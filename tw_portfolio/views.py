@@ -22,9 +22,9 @@ def display_home(request):
 
 def display_all(request):
     detail = PersonalDetail.objects.all()
-    skill = Skill.objects.all()
+    skills = Skill.objects.all()
     category = SkillCategory.objects.all()
-    project = Project.objects.all()
+    projects = Project.objects.all()
     data = Home.objects.all()
     work_history = WorkHistory.objects.all()
     education = Education.objects.all()
@@ -32,8 +32,8 @@ def display_all(request):
     context = {
         'detail': detail,
         'data': data,
-        'project': project,
-        'skill': skill,
+        'projects': projects,
+        'skills': skills,
         'category': category,
         'work_history': work_history,
         'education': education
@@ -118,10 +118,10 @@ def display_add_project(request):
         else:
             project_form = ProjectForm()
 
-    project = Project.objects.all()
+    projects = Project.objects.all()
 
     context = {
-        'project': project,
+        'projects': projects,
         'project_form': ProjectForm(),
     }
 
@@ -156,3 +156,38 @@ def display_add_education(request):
     }
 
     return render(request, 'pages/add_education.html', context)
+
+
+@check_admin
+def display_edit_skill(request, skill_id=None):
+    skills = Skill.objects.all()
+    category = SkillCategory.objects.all()
+
+    if skill_id:
+        skill = get_object_or_404(Skill, id=skill_id)
+        skill_form = SkillForm(instance=skill)
+    else:
+        skill_form = SkillForm()
+
+    if request.method == 'POST':
+        if skill_id:
+            skill = get_object_or_404(Skill, id=skill_id)
+            skill_form = SkillForm(request.POST, request.FILES, instance=skill)
+        else:
+            skill_form = SkillForm(request.POST, request.FILES)
+
+        if skill_form.is_valid():
+            skill_form.save()
+            if skill_id:
+                return redirect('edit-skill', skill_id=skill.id)
+            else:
+                return redirect('edit-skill')
+
+    context = {
+        'skill': skill if skill_id else None,
+        'skill_form': SkillForm(),
+        'category': category,
+        'skills': skills
+    }
+
+    return render(request, 'pages/edit_skill.html', context)
