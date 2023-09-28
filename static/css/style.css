@@ -19,6 +19,8 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
 }
 
 body {
@@ -85,6 +87,10 @@ hr {
     margin-top: 1.4rem;
     text-align: center;
     width: 100%;
+}
+
+.navbar-toggler {
+    background-color: var(--white);
 }
 
 /* Home Page */
