@@ -54,6 +54,16 @@ hr {
     opacity: 1;
 }
 
+.box-border {
+    border: solid 0.3rem var(--white);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.bottom-margin {
+    margin-bottom: 3rem;
+}
+
 /* Navbar */
 
 .navbar {
@@ -110,12 +120,6 @@ hr {
 }
 
 /* About Section */
-
-.about-border {
-    border: solid 0.3rem var(--white);
-    padding: 2rem;
-    border-radius: 2rem;
-}
 
 .about-row {
     justify-content: space-evenly;
@@ -223,6 +227,17 @@ hr {
 
 .project-btn {
     width: 50%
+}
+
+/* CV Section */
+
+.cv-p {
+    font-size: 2.4rem;
+}
+
+.download-link {
+    color: var(--white);
+    font-size: 4rem;
 }
 
 /* Dashboard */
