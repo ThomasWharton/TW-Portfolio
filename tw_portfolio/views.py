@@ -250,3 +250,33 @@ def display_edit_work_history(request, work_history_id=None):
     }
 
     return render(request, 'pages/edit_work_history.html', context)
+
+
+@check_admin
+def display_edit_education(request, education_id=None):
+    educations = Education.objects.all()
+
+    if education_id:
+        education = get_object_or_404(Education, pk=education_id)
+        education_form = EducationForm(instance=education)
+    else:
+        education_form = EducationForm()
+
+    if request.method == 'POST':
+        if education_id:
+            education = get_object_or_404(Project, pk=project_id)
+            education_form = EducationForm(request.POST, instance=education)
+        else:
+            education_form = EducationForm(request.POST)
+
+        if education_form.is_valid():
+            education_form.save()
+            return redirect('dashboard')
+
+    context = {
+        'education': education if education_id else None,
+        'education_form': education_form,
+        'educations': educations
+    }
+
+    return render(request, 'pages/edit_education.html', context)

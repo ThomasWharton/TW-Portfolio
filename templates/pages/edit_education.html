@@ -1,0 +1,34 @@
+{% extends "dashboard_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+    <div class="row form-row">
+        <h2 class="heading text-center">Edit Education</h2>
+        <div class="col-md-5">        
+            <form method="POST" class="form" enctype="multipart/form-data">
+                {% csrf_token %}            
+                <div class="col text-left">
+                    {{ education_form|crispy }}
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <div class="row card-container">
+                {% for education in educations %}
+                    <div class="card col-md-3 project-card">
+                        <div class="card-body">
+                            <a href="{% url 'edit-education' education.id %}" class="form-a">
+                                <h4>{{ education.place_of_study }}</h4>
+                            </a>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
