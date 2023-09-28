@@ -293,4 +293,12 @@ hr {
 
 .form-row {
     justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-a {
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 1.6rem;
+    color: var(--white);
 }

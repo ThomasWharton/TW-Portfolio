@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="heading text-center">About Me</h2>
-    {% for detail in detail %}
+    {% for detail in details %}
     <div class="row about-row text-center box-border">
         <div class="col-md-4">
             <div class="row">
@@ -26,7 +26,7 @@
     <div class="row history-row box-border">
         <div class="col-md-4">
             <h2 class="timeline-heading text-center">Education</h2>
-            {% for education in education %}
+            {% for education in educations %}
                 {% if education.end_date == null %}
                     <div class="timeline-item" data-dates="{{ education.start_date }} -  Present">
                         <h3>{{ education.place_of_study }}</h3>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-md-4">
             <h2 class="timeline-heading text-center">Work History</h2>
-            {% for work_history in work_history %}
+            {% for work_history in work_histories %}
                 {% if work_history.end_date == null %}
                     <div class="timeline-item" data-dates="{{ work_history.start_date }} -  Present">
                         <h3>{{ work_history.company_name }}</h3>

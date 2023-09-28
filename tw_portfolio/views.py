@@ -21,22 +21,22 @@ def display_home(request):
 
 
 def display_all(request):
-    detail = PersonalDetail.objects.all()
+    details = PersonalDetail.objects.all()
     skills = Skill.objects.all()
-    category = SkillCategory.objects.all()
+    categories = SkillCategory.objects.all()
     projects = Project.objects.all()
     data = Home.objects.all()
-    work_history = WorkHistory.objects.all()
-    education = Education.objects.all()
+    work_histories = WorkHistory.objects.all()
+    educations = Education.objects.all()
 
     context = {
-        'detail': detail,
+        'details': details,
         'data': data,
         'projects': projects,
         'skills': skills,
-        'categories': category,
-        'work_history': work_history,
-        'education': education
+        'categories': categories,
+        'work_histories': work_histories,
+        'educations': educations
         }
     if request.path == "home/":
         return render(request, 'pages/index.html', context)
@@ -180,10 +180,7 @@ def display_edit_skill(request, skill_id=None):
 
         if skill_form.is_valid():
             skill_form.save()
-            if skill_id:
-                return redirect('edit-skill', skill_id=skill.id)
-            else:
-                return redirect('edit-skill')
+            return redirect('dashboard')
 
     context = {
         'skill': skill if skill_id else None,
@@ -214,10 +211,7 @@ def display_edit_project(request, project_id=None):
 
         if project_form.is_valid():
             project_form.save()
-            if project_id:
-                return redirect('edit-project', project_id=project.id)
-            else:
-                return redirect('edit-project')
+            return redirect('dashboard')
 
     context = {
         'project': project if project_id else None,
@@ -226,3 +220,33 @@ def display_edit_project(request, project_id=None):
     }
 
     return render(request, 'pages/edit_project.html', context)
+
+
+@check_admin
+def display_edit_work_history(request, work_history_id=None):
+    work_histories = WorkHistory.objects.all()
+
+    if work_history_id:
+        work_history = get_object_or_404(WorkHistory, pk=work_history_id)
+        work_history_form = WorkHistoryForm(instance=work_history)
+    else:
+        work_history_form = WorkHistoryForm()
+
+    if request.method == 'POST':
+        if work_history_id:
+            work_history = get_object_or_404(WorkHistory, pk=work_history_id)
+            work_history_form = WorkHistoryForm(request.POST, instance=work_history)
+        else:
+            work_history_form = WorkHistoryForm(request.POST)
+
+        if work_history_form.is_valid():
+            work_history_form.save()
+            return redirect('dashboard')
+
+    context = {
+        'work_history': work_history if work_history_id else None,
+        'work_history_form': work_history_form,
+        'work_histories': work_histories
+    }
+
+    return render(request, 'pages/edit_work_history.html', context)
