@@ -1,5 +1,9 @@
 # Thomas' Personal Portfolio Webpage
 
+![Site Image](static/media/screenshots/home-desktop.png)
+
+[View live project here.](https://tw-portfolio-f81a23484316.herokuapp.com/)
+
 ## Introduction
 
 Welcome to my personal portfolio page, built as my project 4 for my CodeInstitute Full Stack Software Development Diploma.
@@ -11,7 +15,6 @@ The webpage will be geared towards showcasing my skills as a developer and shari
 
 ### User Stories
 * As a user, I can click navigation links so that I can easily navigate the site. 
-* As a user, I can fill in a contact form so that I can get in contact with the site owner.
 * As a user, I can access social media links so that I can see other activity from the site owner.
 * As a user, I can download the site owners CV so that I can view their professional credentials.
 * As a user, I can view the skills of the site owner so that I can get an idea of how they are progressing as a developer.
@@ -27,7 +30,7 @@ The webpage will be geared towards showcasing my skills as a developer and shari
 ## Website Goals
 
 The goals of this website are to showcase my journey as a developer and share what I am like as a person.
-There will also be functionality to download my CV and to contact me for further information or discuss working with me.
+There will also be functionality to download my CV.
 The site will have information to highlight my skills and showcase the projects I have previously completed. 
 The aim is to attract future employers and show that I would be a worthy member of their team.
 
@@ -36,7 +39,6 @@ The aim is to attract future employers and show that I would be a worthy member 
 * About section.
 * Skills section.
 * Project showcase section.
-* Contact page.
 * Downloadable CV.
 * Links to social media.
 * Login access for admins only to admin dashboard.
@@ -50,48 +52,101 @@ The aim is to attract future employers and show that I would be a worthy member 
 
 ### Colours
 
+![Colour Palette](static/media/screenshots/colour-palette.png)
+
 * #000080 - Navy Blue header/footer
 * #00AEFF - Picton Blue background
 * #FFFFFF - White Text
 
 ### Icons
 
-The icons used for the site were all sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome").
+The icons used for the site were sourced from [Font Awesome](https://fontawesome.com/ "Font Awesome") and [Devicon](https://devicon.dev/ "Devicon").
 
 ## Structure
 
-The structure of the site will be simplistic as to not deter the user from engaging with the content. The initial landing page will feature a brief description of myself including a picture. The user will be able to navigate to a page highlighting my skills, one for basic information about myself, one to showcase my projects and a contact form page. The site will be developed with a mobile first mindset and use bootstrap break points to restructure the layout dependent on the device. There will be a backend admin dashboard for the management of data used on the site. This dashboard will only be available to super users. The navbar will contain a login link and once logged in (admins only), the login link will change to one for the admin dashboard.
+The structure of the site will be simplistic as to not deter the user from engaging with the content. The main site will be broken into sections and be a continuous scroller for ease of reading. There will be a backend admin dashboard for the management of data used on the site. This dashboard will only be available to super users. The navbar will contain a login link and once logged in (admins only), the login link will change to one for the admin dashboard.
 
 ## Features
 
-### Landing Page
+### Home Section
 
-The landing page will feature an image of myself along with some basic information in regards to the site and my coding jouirney. 
+The landing page will feature an image of myself along with some basic information in regards to the site.
+
+*Home Desktop*<br>
+![Home Desktop](static/media/screenshots/home-desktop.png)
+
+*Home Mobile*<br>
+![Home Mobile](static/media/screenshots/home-mobile.png)
 
 ### Navbar
 
-The navbar will be present on all pages and will contain navigation links to all the pages on the site. There will also be a log in link which will allow admins to log in and access the admin dashboard. Once an admin is logged in, the log in link will change to log out and an extra button for the admin dashboard will be present.
+The navbar will be present on all pages and will contain navigation links to all the pages on the site. Once logged in as admin, an additional button for the dashboard will show on the navbar. There will be a different navbar for the dashboard, only consisting of a home, dashboard and logout link. The navbar will change to a toggle icon with a dropdown list once the screen size drops below a certain width.
 
-### About Me Page
+*Navbar Desktop*<br>
+![Navbar Desktop](static/media/screenshots/nav-desktop.png)
 
-The about me page will give more information about myself than the original landing page. Information such as my current location, more on my coding journey and work history.
+*Navbar Mobile*<br>
+![Navbar Mobile](static/media/screenshots/nav-toggle.png)
 
-### Skills Page
+*Navbar Admin*<br>
+![Navbar Admin](static/media/screenshots/admin-navbar.png)
 
-Tne skills page will highlight what coding related skills I have learned thus far and how strong of an understanding I have with each. The skills page will show a table with icons for each skill which will be a clickable button. When clicked, I modal will appear with information on how strong my knowledge is on each skill.
+*Navbar Dashboard*<br>
+![Navbar Dashboard](static/media/screenshots/dashboard-nav.png)
 
-### Project Page
+### About Me Section
 
-The project page will contain a look at all the projects I have completed so far with links to the repositories and the live sites for each. There will be an image and brief description of each project.
+The about me section will give more information about myself than the original landing page. Information such as my current location, more on my coding journey and work history.
 
-### Contact Page
+*About Desktop*<br>
+![About Desktop](static/media/screenshots/about-desktop.png)
 
-The contact page will contain a form which a user can fill in with basic details and a message to send me. This can be used to contact me about potential work opportunities, for collaboration on a project or even if they would just like to get to know me better. There will also be a link to download a PDF version of my CV on this page.
+*About Mobile*<br>
+![About Mobile](static/media/screenshots/about-mobile.png)
+
+### Skills Section
+
+Tne skills section will highlight what coding related skills I have learned thus far and how strong of an understanding I have with each. The skills page will show a table with icons for each skill which will be a clickable button. When clicked, the description box will update with more detailed information about that particular skill.
+
+*Skills Desktop*<br>
+![Skills Desktop](static/media/screenshots/skills-desktop.png)
+
+*Skills Mobile*<br>
+![Skills Mobile](static/media/screenshots/skills-mobile.png)
+
+### Projects Section
+
+The project section will contain a look at all the projects I have completed so far with links to the repositories and the live sites for each. There will be an image and brief description of each project.
+
+*Projects Desktop*<br>
+![Projects Desktop](static/media/screenshots/projects-desktop.png)
+
+*Projects Mobile*<br>
+![Projects Mobile](static/media/screenshots/projects-mobile.png)
+
+### CV Section
+
+The CV section will contain a link to my CV on my GitHub repository where the user can download it.
+
+*CV Desktop*<br>
+![CV Desktop](static/media/screenshots/cv-desktop.png)
+
+*CV Mobile*<br>
+![CV Mobile](static/media/screenshots/cv-mobile.png)
 
 ### Admin Dashboard
 
-The admin dashboard will be used to create, update or delete information used on the site. This will only be available to admins and will be accessable once logged in. 
+The admin dashboard will be used to create, update or delete information used on the site. This will only be available to admins and will be accessable once logged in.
+
+*Dashboard Desktop*<br>
+![Dashboard Desktop](static/media/screenshots/dashboard-desktop.png)
+
+*Dashboard Mobile*<br>
+![Dashboard Mobile](static/media/screenshots/dashboard-mobile.png)
 
 ### Footer
 
 The footer will be present on each page and contain links to my social accounts.
+
+*Footer*<br>
+![Footer](static/media/screenshots/footer.png)
