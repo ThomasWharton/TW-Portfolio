@@ -331,3 +331,118 @@ The education section will be the same as for the work history section.
 * [Heroku](https://heroku.com "Heroku")
 * [Psycopg](https://wiki.postgresql.org/wiki/Psycopg "Psycopg")
 * [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/ "Crispy Forms")
+
+## Development and Deployment
+
+### Development
+
+#### Forking GitHub Repository
+
+Forking allows you to make a copy of a chosen repository to your own GitHub account. This allows you to test and edit the project without making changes to the original. Forking is done by following these steps.
+
+1. Whilst logged into your GitHub account, navigate to the repository you would like to fork.
+2. Click on the **Fork** button at the top right of the page.
+3. Choose a name to give the repository. It will be intially named as the same as the original repository.
+4. Click the **Create Fork** button.
+
+#### Cloning GitHub Repository
+
+Cloning allows you to download a local version of a chosen repository. Cloning can be done by following these steps.
+
+1. Whilst logged into your GitHub account, navigate to the repository you would like to clone.
+2. Click the green **<> Code** button.
+3. Click on the **Local** tab.
+4. Select **HTTPS** and copy the url.
+5. Open your chosen IDE and ensure Git is installed.
+5. In your IDE terminal type **git clone (url link that you copied)** and hit enter.
+
+#### Cloudinary
+
+1. Navigate to [Cloudinary](https://cloudinary.com/ "Cloudinary") and create an account.
+2. Log in.
+3. Navigate to your dashboard and copy the API Enviroment variable.
+4. Keep a note of this variable as you will need to add it to your env.py file in your project.
+
+#### ElephantSQL
+
+1. Navigate to [ElephantSQL](https://www.elephantsql.com/ "ElephantSQL") and create an account.
+2. Once logged in, create new instance.
+3. Select a plan, Tiny Turtle is the free to use plan.
+4. Select a region, one closest to yourself.
+5. Click create instance.
+6. Select newly created instance.
+7. Copy and make note of instance URL as this will be added to your env.py file.
+
+#### env File
+
+You need to create an env.py file in the root folder of your repository. This is where you assign hidden variables for security reasons. This file must be added to your list of ignored files in git.ignore to ensure it does not get pushed up to your repository on GitHub as it would then be publicly accessible.
+
+*env.py*<br>
+![env.py](static/media/screenshots/env-file.png)
+
+For the DATABASE_URL variable, assign it your elephantSQL instance URL.
+For the SECRET_KEY variable, assign a secret key of your choosing. You can generate one at [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/).
+For the CLOUDINARY_URL, assign it your API Enviroment variable (you need to remove everything before cloudinary://).
+
+As you can see in the picture above, I have a variable named DEBUG which is set to 1. The reason for this is because when I assign DEBUG in my settings.py file, I can assign it to this value. A string with a value in it is considered to be a boolean value of True, meaning DEBUG=True for my production environment. Due to the variable being set in my env.py file, it will not be pushed up to my repository and therefore default back to False. It is necessary to have DEBUG set to false for deployment purposes.
+
+#### Requirements
+
+The requirements for this particular project are as follows:<br>
+
+asgiref==3.7.2<br>
+backports.zoneinfo;python_version<"3.9"<br>
+cloudinary==1.34.0<br>
+crispy-bootstrap5==0.7<br>
+dj-database-url==2.1.0<br>
+dj3-cloudinary-storage==0.0.6<br>
+Django==4.2.5<br>
+django-allauth==0.56.1<br>
+django-crispy-forms==2.0<br>
+gunicorn==21.2.0<br>
+oauthlib==3.2.2<br>
+psycopg2==2.9.7<br>
+PyJWT==2.8.0<br>
+python3-openid==3.2.0<br>
+requests-oauthlib==1.3.1<br>
+sqlparse==0.4.4<br>
+urllib3==1.26.16<br>
+
+You can update your requirements file using the command in your IDE terminal:<br>
+`pip freeze > requirements.txt`<br>
+This is handy command to know for when you install any new components which would then be needed to be added to your requirements.
+
+You can install all requirement packages using the following command in your IDE terminal:<br>
+`pip3 install -r requirements.txt`<br>
+*Disclaimer: Please check Python documentation for the correct terminal command as it may differ depending on the system you are using*
+
+
+### Deployment
+
+This project was deployed using [Heroku](https://www.heroku.com "Heroku") by following the steps detailed below.
+
+1. Navigate to Heroku website and sign up or log in.
+2. Navigate to your dashboard, select **New** and then **Create New App**.
+3. Assign a unique name to your project, select your region and click **Create app**.
+4. Navigate to **Settings** tab.
+5. You need to add specific config vars to be able to deploy the project properly on Heroku. This is done by clicking on **Reveal Config Vars**, and adding them here. The config vars needed are listed below: <br>
+CLOUDINARY_URL = Same as your CLOUDINARY_URL in your env.py.<br>
+DATABASE_URL =  Same as your DATABASE_URL in your env.py.<br>
+DISABLE_COLLECTSTATIC = 1 - This is needed so that it will not time out on deployment. Collect static must be completed in your IDE terminal each time a change is made to static files. Do this by running the command `python3 manage.py collectstatic`.<br>
+PORT = 8000
+SECRET_KEY = Another secret key here - Make sure it is different to the one in your env.py file for security reasons.
+
+#### Deploying from a Github Repository
+
+1. Navigate to **Deploy** tab.
+2. Select **GitHub - Connect** for deployment method and connect your GitHub account by logging in with your GitHub details in the prompt.
+3. Select your GitHub account from the dropdown list if not already preselected.
+4. Search for your GitHub repository that you would like to deploy and click **Connect** on the respository in the search list.
+5. Deployment options are found further down the **Deploy** tab with options for **Automatic Deploys** and **Manual Deploy**. Automatic deploys all for heroku to update your app everytime your GitHub is updated.
+6. Choose your deployment option and the branch from which you would like to deploy.
+7. If **Automatic deploys** is chosen, click on **Enable Automatic Deploys**. If **Manual deploy** chosen, click on **Deploy Branch**.
+8. Heroku should now start the deployment process. Once successfully deployed, a message will appear saying **Your app was successfully deployed.** with a button to view your deployed application.
+
+## Credits
+
+I would like to thank my mentor [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for his continued support throughout the course.
