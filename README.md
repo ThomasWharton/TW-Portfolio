@@ -300,11 +300,48 @@ The education section will be the same as for the work history section.
 
 ## Testing
 
+### Manual Testing
+
+Thorough testing has been completed throughout the project's development. Testing completed is documented in the table below.
+
+| Feature Tested     | Feature Description                               | Testing Completed                                                       | Expected Outcome                                                                     | Result       |
+|--------------------|---------------------------------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------|--------------|
+| Navigation Links   | Navigation links to different sections or pages   | Clicked all links                                                       | All links navigate to correct section or page                                        | As expected. |
+| Login/Logout       | Log in and out features for admins                | Logged in as admin and logged out                                       | Logging in should make admin dashboard accessible<br>and logging out do the opposite | As expected. |
+| CRUD Functionality | Creating, reading, updating and deleting data     | Use admin dashboard to test out creating,<br>updating and deleting data | Any changes made would be reflected in database<br>and front end                     | As expected. |
+| Skill Descriptions | Clicking specific skills updates description box. | Click on skill icons                                                    | Skill descriptions update successfully when clicking<br>icon.                        | As expected. |
+| Project Links      | Project links navigate to repo or live site.      | Click on links                                                          | Clicking on specific link should open that link<br>in another tab.                   | As expected. |
+| CV Download        | CV download button navigates to CV on repository  | Click download button.                                                  | Clicking on the download button should open CV in<br>repository in another tab       | As expected. |
+| Footer Links       | Footer links for social pages                     | Click social links.                                                     | Clicking the footer links should open social media<br>pages in another tab.          | As expected. |
+
 ### Validator Testing
 
-To validate all code used in this project, each file was evaluated using the [CI Python Linter](https://pep8ci.herokuapp.com/).
+To validate all python code used in this project, each file was evaluated using the [CI Python Linter](https://pep8ci.herokuapp.com/).
 
 Errors regarding line length are present in files but does not effect the functionality of the code. Due to this and time constraints, I have opted to ignore these errors.
+
+*Model.py*<br>
+![Model.py](static/media/screenshots/models-test.png)
+
+*Views.py*<br>
+![Views.py](static/media/screenshots/views-test.png)
+
+*Form.py*<br>
+![Form.py](static/media/screenshots/forms-test.png)
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) was used to validate the CSS in this project. The validator returned no errors.
+
+*CSS Validation*<br>
+![CSS Validation](static/media/screenshots/css-test.png)
+
+### Bugs
+
+The skills section starts overlapping at certain screen widths. Fixing it was attempted but due to time constraints had to be left as is.
+
+## Future Development
+
+* Fix issue of skills section overlapping.
+* Add contact form for users to contact me.
 
 ## Technologies Used
 

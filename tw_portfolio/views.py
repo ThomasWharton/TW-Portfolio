@@ -296,7 +296,6 @@ def display_delete_skill(request, skill_id=None):
             skill.delete()
             return redirect('dashboard')
 
-
     context = {
         'skill': skill if skill_id else None,
         'skill_form': skill_form,

@@ -41,6 +41,7 @@ class SkillForm(forms.ModelForm):
             'skill_competency': forms.TextInput(attrs={'style': 'max-width:20rem'}),
         }
 
+
 class SelectSkillForm(forms.ModelForm):
     class Meta:
         model: Skill
