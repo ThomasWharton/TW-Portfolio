@@ -318,6 +318,7 @@ The education section will be the same as for the work history section.
 ### Databases
  * [PostgreSQL](https://www.postgresql.org/ "PostgreSQL")
  * [ElephantSQL](https://www.elephantsql.com/ "ElephantSQL")
+
 ### Tools
 
 * [GitHub](https://github.com "GitHub")
@@ -325,3 +326,8 @@ The education section will be the same as for the work history section.
 * [Balsamic](https://balsamiq.com "Balsamic")
 * [Coolors](http://coolors.co "Coolors")
 * [DevTools](https://developer.chrome.com/docs/devtools "DevTools")
+* [Gunicorn](https://en.wikipedia.org/wiki/Gunicorn "Gitpod")
+* [Cloudinary](https://cloudinary.com/ "Cloudinary")
+* [Heroku](https://heroku.com "Heroku")
+* [Psycopg](https://wiki.postgresql.org/wiki/Psycopg "Psycopg")
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/ "Crispy Forms")
