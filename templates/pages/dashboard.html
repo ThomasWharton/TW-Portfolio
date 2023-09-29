@@ -3,14 +3,13 @@
 {% block content %}
 <div class="container">
     <div class="d-flex justify-content-center">
-        <h1 class ="heading">Admin Dashboard</h1>
+        <h1 class ="heading text-center">Admin Dashboard</h1>
     </div>
 
     <div class="row card-container">
         <div class="card col-md-4">
             <div class="card-body text-center">
             <h3 class="card-title">Home</h3>
-            <img src="..." class="card-img-top" alt="...">
             <p class="card-text">Edit home properties here.</p>
             <a href="{% url 'edit-home' %}" class="btn btn-primary">Edit</a>
             </div>
@@ -18,7 +17,6 @@
         <div class="card col-md-4">
             <div class="card-body text-center">
             <h3 class="card-title">Personal Details</h3>
-            <img src="..." class="card-img-top" alt="...">
             <p class="card-text">Edit personal details here</p>
             <a href="{% url 'edit-personal-detail' %}" class="btn btn-primary">Edit</a>
             </div>
@@ -26,7 +24,6 @@
         <div class="card col-md-4">
             <div class="card-body text-center">
             <h3 class="card-title">Skills</h3>
-            <img src="..." class="card-img-top" alt="...">
             <p class="card-text">Add, edit or delete skills here.</p>
             <a href="{% url 'add-skill' %}" class="btn btn-success">Add</a>
             <a href="{% url 'edit-skill' %}" class="btn btn-primary">Edit</a>
@@ -36,7 +33,6 @@
         <div class="card col-md-4 text-center">
             <div class="card-body">
             <h3 class="card-title">Projects</h3>
-            <img src="..." class="card-img-top" alt="...">
             <p class="card-text">Add, edit or delete projects here.</p>
             <a href="{% url 'add-project' %}" class="btn btn-success">Add</a>
             <a href="{% url 'edit-project' %}" class="btn btn-primary">Edit</a>
@@ -46,7 +42,6 @@
         <div class="card col-md-4 text-center">
             <div class="card-body">
             <h3 class="card-title">Education</h3>
-            <img src="..." class="card-img-top" alt="...">
             <p class="card-text">Add or edit education details here.</p>
             <a href="{% url 'add-education' %}" class="btn btn-success">Add</a>
             <a href="{% url 'edit-education' %}" class="btn btn-primary">Edit</a>
@@ -55,7 +50,6 @@
         <div class="card col-md-4 text-center">
             <div class="card-body">
             <h3 class="card-title">Work History</h3>
-            <img src="..." class="card-img-top" alt="...">
             <p class="card-text">Add or edit work history here.</p>
             <a href="{% url 'add-work-history' %}" class="btn btn-success">Add</a>
             <a href="{% url 'edit-work-history' %}" class="btn btn-primary">Edit</a>
