@@ -300,6 +300,12 @@ The education section will be the same as for the work history section.
 
 ## Testing
 
+### Validator Testing
+
+To validate all code used in this project, each file was evaluated using the [CI Python Linter](https://pep8ci.herokuapp.com/).
+
+Errors regarding line length are present in files but does not effect the functionality of the code. Due to this and time constraints, I have opted to ignore these errors.
+
 ## Technologies Used
 
 ### Languages

@@ -1,7 +1,5 @@
 from django import forms
 from .models import PersonalDetail, Home, Project, Skill, WorkHistory, Education
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field
 
 
 class HomeForm(forms.ModelForm):
