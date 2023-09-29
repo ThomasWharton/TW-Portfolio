@@ -243,3 +243,85 @@ The footer will be present on each page and contain links to my social accounts.
 
 *Footer*<br>
 ![Footer](static/media/screenshots/footer.png)
+
+## Admin Dashboard
+
+For security purposes, the admin dashboard is only available to super users (admins). To login as an admin, you must navigate to the admin login by putting /admin at the end of the site url. Once logged in, you will be taken to the default django backend dashboard. You can navigate back to the site using the view site link in the navigation bar. Once back to the main site, a new link for the dashboard in the navigation bar will be present. Any attempts to navigate to the admin dashboard or any related page will result in redirection to the home page if the user is not logged in.
+
+## CRUD Functionality
+
+CRUD functionality is fully available in the admin dashboard. The dashboard itself contains cards for each model with the option to add, edit and delete data dependent on the model. The buttons on the cards will take you to each individual page for change in data.
+
+### Home
+
+The home section will only have an edit page as there is no need to add or delete any data.
+
+*Edit Home*<br>
+![Edit Home](static/media/screenshots/edit-home.png)
+
+### About
+
+The about section will only have an edit page. As this page is very similar to the edit home page, I have opted not to add a screenshot for this page.
+
+### Skills
+
+The skills section will have options to add, edit or delete data. It is important to be able to add more skills as I progress as a developer. In the edit and delete pages, the form will be accompanied by a table containing all of the current skills. Clicking on a particular skill will reload the page and propagate the form with that skills information.
+
+
+*Add Skill*<br>
+![Add Skill](static/media/screenshots/add-skill.png)
+
+*Edit Skill*<br>
+![Edit Skill](static/media/screenshots/edit-skill.png)
+
+*Delete Skill*<br>
+![Delete Skill](static/media/screenshots/delete-skill.png)
+
+### Projects
+
+The project section will have the options to add, edit or delete data. As I complete more projects, I need the ability to add these to the database. A list of the projects will accompany the form and can be selected to propagate the specific information for editing and deleting purposes.
+
+*Add Project*<br>
+![Add Project](static/media/screenshots/add-project.png)
+
+*Edit Project*<br>
+![Edit Project](static/media/screenshots/edit-project.png)
+
+*Delete Project*<br>
+![Delete Skill](static/media/screenshots/delete-project.png)
+
+### Work History
+
+The work history section will have the options to add or edit data. There is no need to have a delete function in this section.
+
+### Education
+
+The education section will be the same as for the work history section.
+
+## Testing
+
+## Technologies Used
+
+### Languages
+
+* [HTML](https://en.wikipedia.org/wiki/HTML "HTML")
+* [CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript")
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python")
+
+### Libraries & Framework
+
+* [Django](https://en.wikipedia.org/wiki/Django_(web_framework) "Django")
+* [Bootstrap](https://getbootstrap.com/ "Bootstrap")
+* [Google Fonts](https://fonts.google.com "Google Fonts")
+
+### Databases
+ * [PostgreSQL](https://www.postgresql.org/ "PostgreSQL")
+ * [ElephantSQL](https://www.elephantsql.com/ "ElephantSQL")
+### Tools
+
+* [GitHub](https://github.com "GitHub")
+* [Gitpod](https://gitpod.io "Gitpod")
+* [Balsamic](https://balsamiq.com "Balsamic")
+* [Coolors](http://coolors.co "Coolors")
+* [DevTools](https://developer.chrome.com/docs/devtools "DevTools")
