@@ -66,6 +66,98 @@ The icons used for the site were sourced from [Font Awesome](https://fontawesome
 
 The structure of the site will be simplistic as to not deter the user from engaging with the content. The main site will be broken into sections and be a continuous scroller for ease of reading. There will be a backend admin dashboard for the management of data used on the site. This dashboard will only be available to super users. The navbar will contain a login link and once logged in (admins only), the login link will change to one for the admin dashboard.
 
+### Database Models
+
+Home:<br>
+
+| Object            | Field           |
+|-------------------|-----------------|
+| hero_image        | CloudinaryField |
+| main_heading      | CharField       |
+| brief_description | CharField       |
+
+Personal Details:<br>
+
+| Object             | Field           |
+|--------------------|-----------------|
+| detail_paragraph_1 | CharField       |
+| detail_paragraph_2 | CharField       |
+| full_name          | CharField       |
+| nationality        | CharField       |
+| nationality_flag   | CloudinaryField |
+| residence          | CharField       |
+
+Skill:<br>
+
+| Object            | Field      |
+|-------------------|------------|
+| name              | CharField  |
+| skill_icon        | URLField   |
+| skill_description | CharField  |
+| category          | ForeignKey |
+
+Skill Category:<br>
+
+| Object            | Field      |
+|-------------------|------------|
+| category          | CharField  |
+
+Project:<br>
+
+| Object              | Field           |
+|---------------------|-----------------|
+| name                | CharField       |
+| project_image       | CloudinaryField |
+| project_description | CharField       |
+| site_link           | URLField        |
+| repo_link           | URLField        |
+
+Work History:<br>
+
+| Object       | Field     |
+|--------------|-----------|
+| company_name | CharField |
+| start_date   | DateField |
+| end_date     | DateField |
+| position     | CharField |
+
+Education:<br>
+
+| Object         | Field     |
+|----------------|-----------|
+| place_of_study | CharField |
+| accreditation  | CharField |
+| start_date     | DateField |
+| end_date       | DateField |
+
+## Wireframes
+
+Wireframes have been created using [Balsamic](https://balsamiq.com "Balsamic"). These wireframes gave a basic view of how my portfolio was going to be laid out. The layout may have changed slightly in the finished product.
+
+*Home Desktop Wireframe*<br>
+![Home Desktop Wireframe](static/media/wireframes/home-desktop-wireframe.png)
+
+*Home Mobile Wireframe*<br>
+![Home Mobile Wireframe](static/media/wireframes/home-mobile-wireframe.png)
+
+*About Desktop Wireframe*<br>
+![About Desktop Wireframe](static/media/wireframes/about-desktop-wireframe.png)
+
+*About Mobile Wireframe*<br>
+![About Mobile Wireframe](static/media/wireframes/about-mobile-wireframe.png)
+
+*Skills Desktop Wireframe*<br>
+![Skills Desktop Wireframe](static/media/wireframes/skills-desktop-wireframe.png)
+
+*Skills Mobile Wireframe*<br>
+![Skills Mobile Wireframe](static/media/wireframes/skills-mobile-wireframe.png)
+
+*Projects Desktop Wireframe*<br>
+![Projects Desktop Wireframe](static/media/wireframes/projects-desktop-wireframe.png)
+
+*Projects Mobile Wireframe*<br>
+![Projects Mobile Wireframe](static/media/wireframes/projects-mobile-wireframe.png)
+
 ## Features
 
 ### Home Section
@@ -77,6 +169,7 @@ The landing page will feature an image of myself along with some basic informati
 
 *Home Mobile*<br>
 ![Home Mobile](static/media/screenshots/home-mobile.png)
+
 
 ### Navbar
 
