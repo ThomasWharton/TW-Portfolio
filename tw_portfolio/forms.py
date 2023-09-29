@@ -7,7 +7,7 @@ from crispy_forms.layout import Layout, Field
 class HomeForm(forms.ModelForm):
     class Meta:
         model = Home
-        fields = '__all__'
+        fields = ['main_heading', 'brief_description']
         widgets = {
             'main_heading': forms.TextInput(attrs={'style': 'max-width:30rem'}),
             'brief_description': forms.Textarea(attrs={'rows': 3, 'cols': 60}),
