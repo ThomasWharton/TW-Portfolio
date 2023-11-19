@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ['tw-portfolio-f81a23484316.herokuapp.com', 'localhost', '8000-thomaswhart-twportfolio-ddtop3vld3y.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['tw-portfolio-f81a23484316.herokuapp.com', 'localhost', '8000-thomaswhart-twportfolio-ijj7bqj3bzm.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -137,7 +137,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-thomaswhart-twportfolio-ddtop3vld3y.ws-eu105.gitpod.io', 'https://tw-portfolio-f81a23484316.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-thomaswhart-twportfolio-ijj7bqj3bzm.ws-eu106.gitpod.io', 'https://tw-portfolio-f81a23484316.herokuapp.com']
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_SECURE = True
