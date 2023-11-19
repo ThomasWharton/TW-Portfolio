@@ -25,9 +25,9 @@ class Home(models.Model):
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=100, null=True, blank=True)
+    name = models.CharField(max_length=100, null=True)
     project_image = CloudinaryField('image', null=True, blank=True)
-    project_description = models.CharField(max_length=400, null=True, blank=True)
+    project_description = models.CharField(max_length=400, null=True)
     site_link = models.URLField()
     repo_link = models.URLField()
 
@@ -36,15 +36,15 @@ class Project(models.Model):
 
 
 class SkillCategory(models.Model):
-    category = models.CharField(max_length=100, null=True, blank=True)
+    category = models.CharField(max_length=100)
 
     def __str__(self):
         return self.category
 
 
 class Skill(models.Model):
-    name = models.CharField(max_length=100, null=True, blank=True)
-    skill_icon = models.URLField(max_length=100, null=True, blank=True)
+    name = models.CharField(max_length=100, null=True)
+    skill_icon = models.URLField(max_length=100, null=True)
     skill_description = models.CharField(max_length=400, null=True, blank=True)
     category = models.ForeignKey(SkillCategory, on_delete=models.CASCADE)
 
@@ -53,7 +53,7 @@ class Skill(models.Model):
 
 
 class WorkHistory(models.Model):
-    company_name = models.CharField(max_length=100, null=True, blank=True)
+    company_name = models.CharField(max_length=100, null=True)
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
     position = models.CharField(max_length=100, null=True)
@@ -63,8 +63,8 @@ class WorkHistory(models.Model):
 
 
 class Education(models.Model):
-    place_of_study = models.CharField(max_length=150, null=True, blank=True)
-    accreditation = models.CharField(max_length=150, null=True, blank=True)
+    place_of_study = models.CharField(max_length=150, null=True)
+    accreditation = models.CharField(max_length=150, null=True)
     start_date = models.DateField(null=True)
     end_date = models.DateField(null=True, blank=True)
 
