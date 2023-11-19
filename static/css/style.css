@@ -339,6 +339,13 @@ hr {
     color: var(--white);
 }
 
+.account-form-btn {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
 @media (max-width: 768px) {
 
     html {
