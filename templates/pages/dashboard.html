@@ -55,6 +55,13 @@
             <a href="{% url 'edit-work-history' %}" class="btn btn-primary">Edit</a>
             </div>
         </div>
+        <div class="col-md-4 text-center">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}" id="msg" role="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}

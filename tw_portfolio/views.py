@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
 from django.http import HttpResponseRedirect
 from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm, WorkHistoryForm, EducationForm
+from django.contrib import messages
 
 
 def check_admin(fn):
@@ -58,6 +59,7 @@ def display_edit_home(request):
         home_form = HomeForm(request.POST, request.FILES, instance=data)
         if home_form.is_valid():
             home_form.save()
+            messages.success(request, "Home details edited successfully!")
             return redirect('dashboard')
     else:
         home_form = HomeForm(instance=data)
@@ -79,6 +81,7 @@ def display_edit_personal_detail(request):
         personal_detail_form = PersonalDetailForm(request.POST, request.FILES, instance=data)
         if personal_detail_form.is_valid():
             personal_detail_form.save()
+            messages.success(request, "Personal details edited successfully!")
             return redirect('dashboard')
     else:
         personal_detail_form = PersonalDetailForm(instance=data)
@@ -97,6 +100,7 @@ def display_add_skill(request):
         skill_form = SkillForm(request.POST)
         if skill_form.is_valid():
             skill_form.save()
+            messages.success(request, "Skill added successfully!")
             return redirect('dashboard')
 
     context = {
@@ -114,6 +118,7 @@ def display_add_project(request):
             project = project_form.save(commit=False)
             project.project_image = request.FILES['project_image']
             project_form.save()
+            messages.success(request, "Project added successfully!")
             return redirect('dashboard')
         else:
             project_form = ProjectForm()
@@ -134,6 +139,7 @@ def display_add_work_history(request):
         work_history_form = WorkHistoryForm(request.POST)
         if work_history_form.is_valid():
             work_history_form.save()
+            messages.success(request, "Work history added successfully!")
             return redirect('dashboard')
 
     context = {
@@ -149,6 +155,7 @@ def display_add_education(request):
         education_form = EducationForm(request.POST)
         if education_form.is_valid():
             education_form.save()
+            messages.success(request, "Education information added successfully!")
             return redirect('dashboard')
 
     context = {
@@ -178,6 +185,7 @@ def display_edit_skill(request, skill_id=None):
 
         if skill_form.is_valid():
             skill_form.save()
+            messages.success(request, "Skill edited successfully!")
             return redirect('dashboard')
 
     context = {
@@ -209,6 +217,7 @@ def display_edit_project(request, project_id=None):
 
         if project_form.is_valid():
             project_form.save()
+            messages.success(request, "Project edited successfully!")
             return redirect('dashboard')
 
     context = {
@@ -239,6 +248,7 @@ def display_edit_work_history(request, work_history_id=None):
 
         if work_history_form.is_valid():
             work_history_form.save()
+            messages.success(request, "Work history edited successfully!")
             return redirect('dashboard')
 
     context = {
@@ -262,13 +272,14 @@ def display_edit_education(request, education_id=None):
 
     if request.method == 'POST':
         if education_id:
-            education = get_object_or_404(Project, pk=project_id)
+            education = get_object_or_404(Education, pk=education_id)
             education_form = EducationForm(request.POST, instance=education)
         else:
             education_form = EducationForm(request.POST)
 
         if education_form.is_valid():
             education_form.save()
+            messages.success(request, "Education edited successfully!")
             return redirect('dashboard')
 
     context = {
@@ -294,6 +305,7 @@ def display_delete_skill(request, skill_id=None):
     if request.method == 'POST':
         if skill_id:
             skill.delete()
+            messages.success(request, "Skill deleted successfully!")
             return redirect('dashboard')
 
     context = {
@@ -319,6 +331,7 @@ def display_delete_project(request, project_id=None):
     if request.method == 'POST':
         if project_id:
             project.delete()
+            messages.success(request, "Project deleted successfully!")
             return redirect('dashboard')
 
     context = {
