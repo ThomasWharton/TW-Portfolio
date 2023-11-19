@@ -5,7 +5,7 @@
 <div class="container top-margin d-flex flex-column align-items-center">
   <div class="row">
     <div class="col-md-12">
-        <h1>Sign In</h1>
+        <h1>Admin Log In</h1>
 
 
         <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -14,7 +14,7 @@
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="account-form-btn" type="submit">Sign In</button>
+          <button class="account-form-btn" type="submit">Log In</button>
         </form>
 
     </div>
