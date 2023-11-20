@@ -246,7 +246,7 @@ The footer will be present on each page and contain links to my social accounts.
 
 ## Admin Dashboard
 
-For security purposes, the admin dashboard is only available to super users (admins). To login as an admin, you must navigate to the admin login by putting /admin at the end of the site url. Once logged in, you will be taken to the default django backend dashboard. You can navigate back to the site using the view site link in the navigation bar. Once back to the main site, a new link for the dashboard in the navigation bar will be present. Any attempts to navigate to the admin dashboard or any related page will result in redirection to the home page if the user is not logged in.
+For security purposes, the admin dashboard is only available to super users (admins). Any attempts to navigate to the admin dashboard or any related page will result in redirection to the home page if the user is not logged in.
 
 ## CRUD Functionality
 
@@ -334,6 +334,24 @@ Errors regarding line length are present in files but does not effect the functi
 *CSS Validation*<br>
 ![CSS Validation](static/media/screenshots/css-test.png)
 
+*HTML Validation*<br>
+
+Initially when passing through the HTML validator, multiple errors where found. The errors are shown below.
+
+![HTML Errors 1](static/media/screenshots/html-errors-1.png)<br>
+![HTML Errors 2](static/media/screenshots/html-errors-2.png)<br>
+
+Errors 1 through 4 were caused by duplicate tags for DOCTYPE, html and head. These were the result of having these tags within my head component as well as in the base. Once I removed the tags from my head component, these errors were no longer present.
+
+Errors 5, 7 and 11 were all fixed by adding an alt attribute to the image elements.
+
+Errors 6 and 8 were fixed by changing the element to an img from an image element and removing the closing tag.
+
+Errors 9 and 10 were fixed by adding placeholder in the empty heading and in the empty src for the image.
+
+All errors have been cleared and validator completes clear.
+
+![HTML Validation](static/media/screenshots/html-validation-results.png)
 ### Bugs
 
 The skills section starts overlapping at certain screen widths. Fixing it was attempted but due to time constraints had to be left as is.
