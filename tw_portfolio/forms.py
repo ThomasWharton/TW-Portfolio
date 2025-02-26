@@ -5,11 +5,7 @@ from .models import PersonalDetail, Home, Project, Skill, WorkHistory, Education
 class HomeForm(forms.ModelForm):
     class Meta:
         model = Home
-        fields = ['brief_description']
-        widgets = {
-            'brief_description': forms.Textarea(attrs={'rows': 3, 'cols': 60}),
-        }
-
+        fields = '__all__'
 
 class PersonalDetailForm(forms.ModelForm):
     class Meta:

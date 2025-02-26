@@ -1,31 +1,8 @@
 <div class="container">
-    <h2 class="heading text-center">About Me</h2>
-    {% for detail in details %}
-    <div class="row about-row text-center box-border">
-        <div class="col-md-4">
-            <div class="row">
-                <p class="about-p">Full Name:</p>
-                <p class="about-p">{{ detail.full_name }}</p>
-            </div>
-            <div class="row">
-                <p class="about-p">Nationality:</p>
-                <p class="about-p">{{ detail.nationality }} <img src="{{ detail.nationality_flag.url }}" class="nationality-flag" alt="nationality"></p>
-            </div>
-            <div class="row">
-                <p class="about-p">Residence:</p>
-                <p class="about-p">{{ detail.residence }}</p>
-            </div>        
-        </div>
-        <div class="col-md-4 justify-content-end">
-            <div class="row">
-                <p class="about-p">{{ detail.detail_paragraph_1 }}</p>
-                <p class="about-p">{{ detail.detail_paragraph_2 }}</p>
-            </div>
-        </div>
-    </div>
+    <h2 class="heading text-center">Experience</h2> 
     <div class="row history-row box-border">
-        <div class="col-md-4">
-            <h2 class="timeline-heading text-center">Education</h2>
+        <div class=" col-12 col-lg-4">
+            <h4 class="timeline-heading text-start text-lg-center">Education</h4>
             {% for education in educations %}
                 {% if education.end_date == null %}
                     <div class="timeline-item" data-dates="{{ education.start_date }} -  Present">
@@ -40,8 +17,8 @@
                 {% endif %}
             {% endfor %}
         </div>
-        <div class="col-md-4">
-            <h2 class="timeline-heading text-center">Work History</h2>
+        <div class="col-12 col-lg-4">
+            <h4 class="timeline-heading text-start text-lg-center">Work History</h4>
             {% for work_history in work_histories %}
                 {% if work_history.end_date == null %}
                     <div class="timeline-item" data-dates="{{ work_history.start_date }} -  Present">
@@ -57,6 +34,4 @@
             {% endfor %}
         </div>
     </div>
-    {% endfor %}
-
 </div>

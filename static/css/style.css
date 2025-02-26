@@ -50,7 +50,7 @@ footer {
 }
 
 hr {
-    border-top: 1px solid var(--white);
+    border-top: 1px solid var(--navy-blue);
     opacity: 1;
 }
 
@@ -145,7 +145,7 @@ hr {
 .timeline-item {
     padding: 4em 2em 0em 2em;
     position: relative;
-    color: #fafafa;
+    color: var(--navy-blue);
     border-left: 1px solid;
 }
 
@@ -180,7 +180,7 @@ hr {
     left: -6px;
     border-radius: 12px;
     content: '';
-    background: #fafafa;
+    background: var(--navy-blue);
 }
 
 .history-row {

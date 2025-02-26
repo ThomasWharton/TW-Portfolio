@@ -30,6 +30,9 @@ def display_all(request):
     work_histories = WorkHistory.objects.all()
     educations = Education.objects.all()
 
+    work_histories = WorkHistory.objects.all().order_by('-end_date', '-start_date')
+    educations = Education.objects.all().order_by('-end_date', '-start_date')
+
     context = {
         'details': details,
         'data': data,
