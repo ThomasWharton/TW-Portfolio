@@ -1,20 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for data in data %}
+
 <section id="home">
-    <div class="container d-flex flex-column align-items-center">
-        <img src="{{ data.hero_image.url }}" class="hero-image" alt="Image of author">
-
-        <h2 class="heading text-center">{{ data.main_heading }}</h2>
-
-        <p class="text-center home-description">{{ data.brief_description }}</p>
-    </div>
-</section>
-<hr>
-
-<section id="about">
-    {% include 'sections/about.html' %}
+    {% include 'sections/home.html' %}
 </section>
 
 <hr>
@@ -36,7 +25,5 @@
 </section>
 
 <hr>
-
-{% endfor %}
 
 {% endblock %}

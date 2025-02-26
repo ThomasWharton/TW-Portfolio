@@ -24,8 +24,8 @@ html {
 }
 
 body {
-    background-color: var(--picton-blue);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--navy-blue);
     font-size: 1.6rem;
     font-family: var(--main-font);
     margin-bottom:7rem;
@@ -112,10 +112,10 @@ hr {
 /* Home Page */
 
 .hero-image {
-    margin: 6rem 0 2rem;
+    margin: 4rem 0 4rem;
     width: 30rem;
     height: 30rem;
-    border: 0.2rem solid var(--white);
+    border: 0.2rem solid var(--navy-blue);
     border-radius: 50%;
 }
 
@@ -291,6 +291,7 @@ hr {
 .card {
     margin: 1rem;
     background-color: var(--navy-blue);
+    color: var(--white);
 }
 
 /* Footer */

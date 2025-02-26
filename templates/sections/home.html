@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        {% for data in data %}
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                <img src="{{ data.hero_image.url }}" class="hero-image" alt="Image of author">
+            </div>
+        {% endfor %}
+
+        {% for detail in details %}
+            <div class="col-12 col-lg-6">
+                <div class="row">
+                    <p class="about-p">Full Name: {{ detail.full_name }}</p>
+                </div>
+                <div class="row">
+                    <p class="about-p">
+                        Nationality: {{ detail.nationality }} <img src="{{ detail.nationality_flag.url }}" class="nationality-flag" alt="nationality">
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="about-p">Residence: {{ detail.residence }}</p>
+                </div>   
+            </div>
+            <div class="col-12 col-lg-6">
+                    <p class="about-p">{{ detail.detail_paragraph_1 }}</p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="about-p">{{ detail.detail_paragraph_2 }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
