@@ -55,7 +55,7 @@ hr {
 }
 
 .box-border {
-    border: solid 0.3rem var(--white);
+    border: solid 0.3rem var(--navy-blue);
     padding: 2rem;
     border-radius: 2rem;
 }
