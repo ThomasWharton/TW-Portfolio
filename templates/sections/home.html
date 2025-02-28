@@ -9,22 +9,22 @@
         {% for detail in details %}
             <div class="col-12 col-lg-6">
                 <div class="row">
-                    <p class="about-p">Full Name: {{ detail.full_name }}</p>
+                    <p class="about-p text-center text-lg-start">Full Name: {{ detail.full_name }}</p>
                 </div>
                 <div class="row">
-                    <p class="about-p">
+                    <p class="about-p text-center text-lg-start">
                         Nationality: {{ detail.nationality }} <img src="{{ detail.nationality_flag.url }}" class="nationality-flag" alt="nationality">
                     </p>
                 </div>
                 <div class="row">
-                    <p class="about-p">Residence: {{ detail.residence }}</p>
+                    <p class="about-p text-center text-lg-start">Residence: {{ detail.residence }}</p>
                 </div>   
             </div>
             <div class="col-12 col-lg-6">
-                    <p class="about-p">{{ detail.detail_paragraph_1 }}</p>
+                    <p class="about-p text-center text-lg-start">{{ detail.detail_paragraph_1 }}</p>
             </div>
             <div class="col-12 col-lg-6">
-                <p class="about-p">{{ detail.detail_paragraph_2 }}</p>
+                <p class="about-p text-center text-lg-start">{{ detail.detail_paragraph_2 }}</p>
             </div>
         {% endfor %}
     </div>
