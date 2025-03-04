@@ -195,11 +195,13 @@ hr {
 .skill-row {
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
 }
 
-/* .category-row {
-    min-width: 100rem;
-} */
+.category-row {
+    border-bottom: 1px solid var(--navy-blue);
+}
+
 .skills-table {
     min-width: 37rem;
 }
@@ -208,6 +210,7 @@ hr {
     position: relative;
     display: inline-block;
     width: 100%;
+    margin: 1rem 0 !important;
 }
 
 .icon-box {
@@ -370,5 +373,11 @@ hr {
     .category-name {
         font-size:1.6rem;
         padding: 1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .skill-row {
+        justify-content: center;
     }
 }
