@@ -381,3 +381,9 @@ hr {
         justify-content: center;
     }
 }
+
+@media (min-width: 768px) {
+    html {
+        scroll-padding-top: 5.7rem;
+    }
+}
