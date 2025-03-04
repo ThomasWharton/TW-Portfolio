@@ -87,6 +87,7 @@ hr {
 
 .nav-link {
     color: var(--white);
+    font-size: 2rem !important;
 }
 
 .navbar-nav .nav-link.active {
@@ -355,7 +356,7 @@ hr {
 
     .navbar-brand {
         margin: 0 0 0 2rem;
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .navbar-collapse {
