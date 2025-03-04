@@ -351,6 +351,12 @@ hr {
     border-radius: 0.5rem;
 }
 
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 2rem !important;
+    }
+}
+
 @media (max-width: 768px) {
 
     html {
@@ -359,7 +365,7 @@ hr {
 
     .navbar-brand {
         margin: 0 0 0 2rem;
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
 
     .navbar-collapse {
