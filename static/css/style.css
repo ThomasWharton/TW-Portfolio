@@ -196,9 +196,9 @@ hr {
     justify-content: space-between;
 }
 
-.category-row {
+/* .category-row {
     min-width: 100rem;
-}
+} */
 .skills-table {
     min-width: 37rem;
 }

@@ -3,11 +3,11 @@
         <div class="row skill-row">
             <div class="col-12 col-lg-6">
                 {% for category in categories %}
-                <div class="row category-row">
-                    <div class="col-md-2">
+                <div class="row category-row align-items-center">
+                    <div class="col-md-4">
                         <h4 class="category-name">{{ category.category }}</h4>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-8">
                         <ul class="skill-list">
                             {% for skill in skills %}
                             {% if skill.category == category %}
