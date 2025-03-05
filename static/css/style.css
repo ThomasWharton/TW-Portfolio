@@ -273,6 +273,15 @@ hr {
     width: 50%
 }
 
+.project-p {
+    min-height: 18rem;
+}
+
+.repo-btn {
+    background-color: var(--navy-blue) !important;
+    color: var(--white);
+}
+
 /* CV Section */
 
 .cv-p {

@@ -7,10 +7,10 @@
                 <img src="{{ project.project_image.url }}" class="card-img-top project-image" alt="{{ project.name }}">
                 <div class="card-body">
                     <h5 class="card-title project-title">{{ project.name }}</h5>
-                    <p class="card-text">{{ project.project_description }}</p>
+                    <p class="card-text project-p">{{ project.project_description }}</p>
                     <div class="row button-row">
                         <a href="{{ project.site_link }}" class="btn btn-primary project-btn" target="_blank" rel="noopener">Live Site</a>
-                        <a href="{{ project.repo_link }}" class="btn btn-secondary project-btn" target="_blank" rel="noopener">Repository</a>
+                        <a href="{{ project.repo_link }}" class="btn repo-btn project-btn" target="_blank" rel="noopener">Repository</a>
                     </div>
                 </div>
             </div>
