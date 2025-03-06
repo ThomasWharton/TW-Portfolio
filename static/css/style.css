@@ -267,6 +267,9 @@ hr {
     width: 100%;
     gap: 1rem;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
 }
 
 .project-btn {
@@ -274,7 +277,7 @@ hr {
 }
 
 .project-p {
-    min-height: 18rem;
+    margin-bottom: 8rem;
 }
 
 .repo-btn {
