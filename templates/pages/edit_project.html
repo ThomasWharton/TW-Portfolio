@@ -16,17 +16,16 @@
             </form>
         </div>
         <div class="col-md-5">
-            <div class="row card-container">
                 {% for project in projects %}
-                    <div class="card col-md-3 project-card">
-                        <div class="card-body">
-                            <a href="{% url 'edit-project' project.id %}" class="form-a">
-                                <h4>{{ project.name }}</h4>
-                            </a>
+                    <div class="project-select-col">
+                        <a 
+                            href="{% url 'edit-project' project.id %}"
+                            class="form-a btn project-select-btn"
+                        >
+                            {{ project.name }}
+                        </a>
                     </div>
-                  </div>
                 {% endfor %}
-            </div>
         </div>
     </div>
 </div>

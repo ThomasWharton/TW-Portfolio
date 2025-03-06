@@ -355,7 +355,7 @@ hr {
     text-decoration: none;
     font-family: var(--main-font);
     font-size: 1.6rem;
-    color: var(--white);
+    color: var(--navy-blue);
 }
 
 .account-form-btn {
@@ -363,6 +363,19 @@ hr {
     color: var(--white);
     padding: 0.5rem;
     border-radius: 0.5rem;
+}
+
+.project-select-btn {
+    border: 2px solid var(--navy-blue);
+    background-color: var(--white);
+    margin-bottom: 1rem;
+    min-width: 15rem;
+}
+
+.project-select-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (max-width: 576px) {
