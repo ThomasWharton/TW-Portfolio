@@ -3,7 +3,7 @@
         <div class="row skill-row">
             <div class="col-11 col-lg-6">
                 {% for category in categories %}
-                <div class="row category-row align-items-center">
+                <div class="row category-row align-items-center" id="category-{{ category.id }}">
                     <div class="col-4">
                         <h4 class="category-name">{{ category.category }}</h4>
                     </div>

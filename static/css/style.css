@@ -245,6 +245,10 @@ hr {
     display: none;
 }
 
+#category-6 {
+    border: none;
+}
+
 /* Project Section */
 
 .project-image {
