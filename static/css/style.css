@@ -278,7 +278,8 @@ hr {
 }
 
 .project-btn {
-    width: 50%
+    width: 50%;
+    font-size: 1.4rem;
 }
 
 .project-p {
@@ -288,6 +289,10 @@ hr {
 .repo-btn {
     background-color: var(--navy-blue) !important;
     color: var(--white);
+}
+
+.repo-btn:hover {
+    color: var(--white) !important;
 }
 
 /* CV Section */
