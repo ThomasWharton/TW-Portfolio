@@ -228,6 +228,7 @@ hr {
     width: 6rem;
     height: 6rem;
     padding: 1rem;
+    cursor: pointer;
 }
 
 .skill-heading {
