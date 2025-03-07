@@ -193,9 +193,7 @@ hr {
 /* Skills Section */
 
 .skill-row {
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    margin-left: 0;
 }
 
 .category-row {
