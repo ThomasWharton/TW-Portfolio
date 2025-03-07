@@ -8,21 +8,39 @@
 
 <hr>
 
-<section id="experience">
-    {% include 'sections/experience.html' %}
-</section>
+<!-- Experience Section -->
+<button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#experienceCollapse">
+    <h2 class="heading text-center m-0 p-0">Experience</h2> 
+</button>
+<div id="experienceCollapse" class="collapse">
+    <section id="experience">
+        {% include 'sections/experience.html' %}
+    </section>
+</div>
 
 <hr>
 
-<section id="skills">
-    {% include 'sections/skills.html' %}
-</section>
+<!-- Skills Section -->
+<button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#skillsCollapse">
+    <h2 class="heading text-center m-0 p-0">Skills</h2> 
+</button>
+<div id="skillsCollapse" class="collapse">
+    <section id="skills">
+        {% include 'sections/skills.html' %}
+    </section>
+</div>
 
 <hr>
 
-<section id="projects">
-    {% include 'sections/projects.html' %}
-</section>
+<!-- Projects Section -->
+<button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#projectsCollapse">
+    <h2 class="heading text-center m-0 p-0">Projects</h2>
+</button>
+<div id="projectsCollapse" class="collapse">
+    <section id="projects">
+        {% include 'sections/projects.html' %}
+    </section>
+</div>
 
 {% endblock %}
 

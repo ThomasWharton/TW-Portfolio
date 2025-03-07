@@ -246,6 +246,30 @@ hr {
     font-size: 2.4rem;
 }
 
+
+.category-heading {
+    background: none;
+    border: none;
+    font-size: 2rem; /* Adjust to match your category heading size */
+    font-weight: bold;
+    color: #9d9dff; /* Neon effect or gradient */
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.category-heading:hover {
+    color: #fff; /* Change color on hover */
+}
+
+.category-heading:focus {
+    outline: none;
+}
+
 /* Project Section */
 
 .project-image {
