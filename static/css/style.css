@@ -294,17 +294,6 @@ hr {
     color: var(--white) !important;
 }
 
-/* CV Section */
-
-.cv-p {
-    font-size: 2.4rem;
-}
-
-.download-link {
-    color: var(--white);
-    font-size: 4rem;
-}
-
 /* Dashboard */
 
 .card-container {
@@ -395,10 +384,6 @@ hr {
 
 @media (max-width: 768px) {
 
-    html {
-        scroll-padding-top: 27rem;
-    }
-
     .navbar-brand {
         margin: 0 0 0 2rem;
         font-size: 2.4rem;
@@ -410,11 +395,6 @@ hr {
 
     .navbar-toggler {
         border: none;
-    }
-
-    .category-name {
-        font-size:1.8rem;
-        padding: 1rem;
     }
 }
 
