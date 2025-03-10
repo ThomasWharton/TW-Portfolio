@@ -1,32 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-const navLinks = document.querySelectorAll(".nav-link");
-const navbarToggler = document.querySelector(".navbar-toggler");
-const navbarCollapse = document.querySelector(".navbar-collapse");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbarToggler = document.querySelector(".navbar-toggler");
 
-navLinks.forEach((link) => {
+    navLinks.forEach((link) => {
     link.addEventListener("click", function (event) {
-    // Only apply custom scrolling on small screens (when navbar-toggler is visible)
-    if (window.innerWidth < 786) {
-        event.preventDefault(); // Prevent default anchor link behavior
-        
-        const targetId = this.getAttribute("href"); // Get the target section ID
+        const targetId = this.getAttribute("href");
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
-        navbarToggler.click(); // Close the menu
-        
-        // Wait for the menu to fully collapse before scrolling
-        setTimeout(() => {
-            const navbarHeight = document.querySelector(".navbar").offsetHeight;
-            const targetPosition = targetSection.offsetTop - navbarHeight;
+        event.preventDefault(); // Prevent default anchor behavior
 
-            window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth",
-            });
-        }, 300); // Delay scrolling slightly to allow menu to close
+        // Close navbar on small screens
+        if (window.innerWidth < 786) {
+            navbarToggler.click();
         }
-    }
+
+        const collapseElement = targetSection.querySelector(".collapse");
+
+        if (collapseElement) {
+          // If section is collapsed, expand it first
+            if (!collapseElement.classList.contains("show")) {
+            const bsCollapse = new bootstrap.Collapse(collapseElement, {
+                toggle: true,
+            });
+
+            // Wait for collapse animation to complete before scrolling
+            collapseElement.addEventListener(
+                "shown.bs.collapse",
+                function () {
+                smoothScroll(targetSection);
+            },
+              { once: true } // Ensure it only fires once
+            );
+            } else {
+            // If already expanded, just scroll
+            smoothScroll(targetSection);
+            }
+        } else {
+          // If no collapsible content, just scroll
+            smoothScroll(targetSection);
+        }
+        }
     });
-});
+    });
+
+    function smoothScroll(section) {
+        const targetPosition =
+        section.offsetTop - document.querySelector(".navbar").offsetHeight;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
 });
