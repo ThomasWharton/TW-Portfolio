@@ -181,6 +181,10 @@ hr {
     background-color: var(--cyber-dark-blue);
 }
 
+.navbar-nav {
+    --bs-nav-link-hover-color: var(--cyber-pink) !important;
+}
+
 /* ======= HOME PAGE ======= */
 .hero-image {
     border: 0.3rem solid var(--cyber-pink);

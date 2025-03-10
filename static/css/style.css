@@ -284,6 +284,7 @@ hr {
 
 .button-row {
     width: 100%;
+    max-width: 28rem;
     gap: 1rem;
     justify-content: center;
     position: absolute;
