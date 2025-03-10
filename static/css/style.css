@@ -110,7 +110,7 @@ hr {
     margin: 2rem;
 }
 
-/* Home Page */
+/* Home Section*/
 
 .hero-image {
     margin: 4rem 0 4rem;
@@ -119,14 +119,6 @@ hr {
     border: 0.2rem solid var(--navy-blue);
     border-radius: 50%;
 }
-
-.home-description {
-    padding: 2rem;
-    margin-top: 2rem;
-    font-size: 2.4rem;
-}
-
-/* About Section */
 
 .about-row {
     justify-content: space-evenly;
@@ -142,6 +134,8 @@ hr {
     width: 4rem;
     height: 2rem;
 }
+
+/* Experience Section */
 
 .timeline-item {
     padding: 4em 2em 0em 2em;
