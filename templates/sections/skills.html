@@ -14,7 +14,11 @@
                             {% if skill.category == category %}
                                 <div class="col-12col-md-6 col-lg-4 d-flex justify-content-center">
                                     <div class="card skill-card">
-                                        <img class="skill-icon m-auto" src="{{ skill.skill_icon }}" alt="{{ skill.name }}">
+                                        {% if skill.name == "Troubleshooting" %}
+                                            <i class="fa-solid fa-gears"></i>
+                                        {% else %}
+                                            <img class="skill-icon m-auto" src="{{ skill.skill_icon }}" alt="{{ skill.name }}">
+                                        {% endif %}
                                         <div class="card-body">
                                             <h3 class="card-title text-center">{{ skill.name }}</h3>
                                             <p class="card-text text-center">{{ skill.skill_description }}</p>

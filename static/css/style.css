@@ -240,6 +240,12 @@ hr {
     font-size: 2.4rem;
 }
 
+.skill-card > i {
+    font-size: 5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
 
 .category-heading {
     background: none;
