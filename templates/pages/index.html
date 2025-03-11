@@ -8,13 +8,13 @@
 
 <hr>
 
-<div id="accordionExample">
+<div id="sectionAccordian">
     <!-- Experience Section -->
     <section id="experience">
         <button id="experience-btn" class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#experienceCollapse">
             <h2 class="heading text-center m-0 p-0">Experience</h2> 
         </button>
-        <div id="experienceCollapse" class="collapse" data-bs-parent="#accordionExample">
+        <div id="experienceCollapse" class="collapse" data-bs-parent="#sectionAccordian">
             {% include 'sections/experience.html' %}
         </div>
     </section>
@@ -26,7 +26,7 @@
         <button id="skills-btn" class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#skillsCollapse">
             <h2 class="heading text-center m-0 p-0">Skills</h2> 
         </button>
-        <div id="skillsCollapse" class="collapse" data-bs-parent="#accordionExample">
+        <div id="skillsCollapse" class="collapse" data-bs-parent="#sectionAccordian">
             {% include 'sections/skills.html' %}
         </div>
     </section>
@@ -38,7 +38,7 @@
         <button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#projectsCollapse">
             <h2 class="heading text-center m-0 p-0">Projects</h2>
         </button>
-        <div id="projectsCollapse" class="collapse" data-bs-parent="#accordionExample">
+        <div id="projectsCollapse" class="collapse" data-bs-parent="#sectionAccordian">
             {% include 'sections/projects.html' %}
         </div>
     </section>

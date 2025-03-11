@@ -1,35 +1,40 @@
 <div class="container">
     <div class="row skill-row">
-        {% for category in categories %}
-            <div class="row d-flex flex-wrap justify-content-center">
-                <!-- Collapsible Button as Category Name -->
-                <button class="category-heading w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#categoryCollapse{{ forloop.counter }}">
-                    <h3 class="category-name text-center">{{ category.category }}</h3>
-                </button>
+        <!-- Accordion Wrapper for Categories -->
+        <div id="categoryAccordion">
 
-                <!-- Collapsible Skills Section -->
-                <div id="categoryCollapse{{ forloop.counter }}" class="collapse">
-                    <div class="row d-flex flex-wrap justify-content-center">
-                        {% for skill in skills %}
-                            {% if skill.category == category %}
-                                <div class="col-12col-md-6 col-lg-4 d-flex justify-content-center">
-                                    <div class="card skill-card">
-                                        {% if skill.name == "Troubleshooting" %}
-                                            <i class="fa-solid fa-gears"></i>
-                                        {% else %}
-                                            <img class="skill-icon m-auto" src="{{ skill.skill_icon }}" alt="{{ skill.name }}">
-                                        {% endif %}
-                                        <div class="card-body">
-                                            <h3 class="card-title text-center">{{ skill.name }}</h3>
-                                            <p class="card-text text-center">{{ skill.skill_description }}</p>
+            {% for category in categories %}
+                <div class="row d-flex flex-wrap justify-content-center">
+                    <!-- Collapsible Button as Category Name -->
+                    <button class="category-heading w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#categoryCollapse{{ forloop.counter }}">
+                        <h3 class="category-name text-center">{{ category.category }}</h3>
+                    </button>
+
+                    <!-- Collapsible Skills Section -->
+                    <div id="categoryCollapse{{ forloop.counter }}" class="collapse" data-bs-parent="#categoryAccordion">
+                        <div class="row d-flex flex-wrap justify-content-center">
+                            {% for skill in skills %}
+                                {% if skill.category == category %}
+                                    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                        <div class="card skill-card">
+                                            {% if skill.name == "Troubleshooting" %}
+                                                <i class="fa-solid fa-gears"></i>
+                                            {% else %}
+                                                <img class="skill-icon m-auto" src="{{ skill.skill_icon }}" alt="{{ skill.name }}">
+                                            {% endif %}
+                                            <div class="card-body">
+                                                <h3 class="card-title text-center">{{ skill.name }}</h3>
+                                                <p class="card-text text-center">{{ skill.skill_description }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+
+        </div>
     </div>
 </div>
