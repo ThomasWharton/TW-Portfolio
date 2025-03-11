@@ -8,41 +8,43 @@
 
 <hr>
 
-<!-- Experience Section -->
-<section id="experience">
-    <button id="experience-btn" class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#experienceCollapse">
-        <h2 class="heading text-center m-0 p-0">Experience</h2> 
-    </button>
-    <div id="experienceCollapse" class="collapse">
-        {% include 'sections/experience.html' %}
-    </div>
-</section>
+<div id="accordionExample">
+    <!-- Experience Section -->
+    <section id="experience">
+        <button id="experience-btn" class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#experienceCollapse">
+            <h2 class="heading text-center m-0 p-0">Experience</h2> 
+        </button>
+        <div id="experienceCollapse" class="collapse" data-bs-parent="#accordionExample">
+            {% include 'sections/experience.html' %}
+        </div>
+    </section>
 
-<hr>
+    <hr>
 
-<!-- Skills Section -->
-<section id="skills">
-    <button id="skills-btn" class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#skillsCollapse">
-        <h2 class="heading text-center m-0 p-0">Skills</h2> 
-    </button>
-    <div id="skillsCollapse" class="collapse">
-        
+    <!-- Skills Section -->
+    <section id="skills">
+        <button id="skills-btn" class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#skillsCollapse">
+            <h2 class="heading text-center m-0 p-0">Skills</h2> 
+        </button>
+        <div id="skillsCollapse" class="collapse" data-bs-parent="#accordionExample">
             {% include 'sections/skills.html' %}
-        
-    </div>
-</section>
+        </div>
+    </section>
 
-<hr>
+    <hr>
 
-<!-- Projects Section -->
-<section id="projects">
-    <button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#projectsCollapse">
-        <h2 class="heading text-center m-0 p-0">Projects</h2>
-    </button>
-    <div id="projectsCollapse" class="collapse">
+    <!-- Projects Section -->
+    <section id="projects">
+        <button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#projectsCollapse">
+            <h2 class="heading text-center m-0 p-0">Projects</h2>
+        </button>
+        <div id="projectsCollapse" class="collapse" data-bs-parent="#accordionExample">
             {% include 'sections/projects.html' %}
-    </div>
-</section>
+        </div>
+    </section>
+
+</div>
 
 {% endblock %}
+
 
