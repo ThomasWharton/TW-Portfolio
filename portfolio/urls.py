@@ -45,5 +45,11 @@ urlpatterns = [
     path('delete-skill/<skill_id>', views.display_delete_skill, name="delete-skill"),
     path('delete-project', views.display_delete_project, name="delete-project"),
     path('delete-project/<project_id>', views.display_delete_project, name="delete-project"),
+    path('articles/<slug:slug>/', views.display_article_detail, name="article-detail"),
+    path('add-article', views.display_add_article, name="add-article"),
+    path('edit-article', views.display_edit_article, name="edit-article"),
+    path('edit-article/<article_id>', views.display_edit_article, name="edit-article"),
+    path('delete-article', views.display_delete_article, name="delete-article"),
+    path('delete-article/<article_id>', views.display_delete_article, name="delete-article"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

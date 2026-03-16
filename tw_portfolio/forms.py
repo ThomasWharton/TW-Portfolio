@@ -1,5 +1,5 @@
 from django import forms
-from .models import PersonalDetail, Home, Project, Skill, WorkHistory, Education
+from .models import PersonalDetail, Home, Project, Skill, WorkHistory, Education, Article
 
 
 class HomeForm(forms.ModelForm):
@@ -63,3 +63,15 @@ class EducationForm(forms.ModelForm):
     class Meta:
         model = Education
         fields = '__all__'
+
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ['title', 'slug', 'summary', 'content']
+        widgets = {
+            'title': forms.TextInput(attrs={'style': 'max-width:40rem'}),
+            'slug': forms.TextInput(attrs={'style': 'max-width:40rem'}),
+            'summary': forms.Textarea(attrs={'rows': 3, 'cols': 60}),
+            'content': forms.Textarea(attrs={'rows': 20, 'cols': 60}),
+        }

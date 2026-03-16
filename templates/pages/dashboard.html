@@ -55,6 +55,15 @@
             <a href="{% url 'edit-work-history' %}" class="btn btn-primary">Edit</a>
             </div>
         </div>
+        <div class="card col-md-4 text-center">
+            <div class="card-body">
+            <h3 class="card-title">Articles</h3>
+            <p class="card-text">Add, edit or delete articles here.</p>
+            <a href="{% url 'add-article' %}" class="btn btn-success">Add</a>
+            <a href="{% url 'edit-article' %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete-article' %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
         <div class="col-md-4 text-center">
             {% if messages %}
                 {% for message in messages %}

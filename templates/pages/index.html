@@ -43,6 +43,18 @@
         </div>
     </section>
 
+    <hr>
+
+    <!-- Articles Section -->
+    <section id="articles">
+        <button class="heading section-heading btn w-100 m-0" type="button" data-bs-toggle="collapse" data-bs-target="#articlesCollapse">
+            <h2 class="heading text-center m-0 p-0">Articles</h2>
+        </button>
+        <div id="articlesCollapse" class="collapse" data-bs-parent="#sectionAccordian">
+            {% include 'sections/articles.html' %}
+        </div>
+    </section>
+
 </div>
 
 {% endblock %}

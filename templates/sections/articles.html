@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row card-container d-flex flex-wrap justify-content-center">
+        {% for article in articles %}
+        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+            <div class="card project-card">
+                <div class="card-body">
+                    <h5 class="card-title project-title">{{ article.title }}</h5>
+                    <p class="card-text project-p">{{ article.summary }}</p>
+                    <small class="text-muted">{{ article.published_date }}</small>
+                    <div class="row button-row mt-2">
+                        <a href="{% url 'article-detail' article.slug %}" class="btn btn-primary project-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No articles yet.</p>
+        {% endfor %}
+    </div>
+</div>

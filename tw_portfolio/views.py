@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education
+from .models import Home, PersonalDetail, Skill, SkillCategory, Project, WorkHistory, Education, Article
 from django.http import HttpResponseRedirect
-from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm, WorkHistoryForm, EducationForm
+from .forms import PersonalDetailForm, SkillForm, HomeForm, ProjectForm, WorkHistoryForm, EducationForm, ArticleForm
 from django.contrib import messages
 
 
@@ -40,7 +40,8 @@ def display_all(request):
         'skills': skills,
         'categories': categories,
         'work_histories': work_histories,
-        'educations': educations
+        'educations': educations,
+        'articles': Article.objects.all().order_by('-published_date'),
         }
     if request.path == "home/":
         return render(request, 'pages/index.html', context)
@@ -344,3 +345,83 @@ def display_delete_project(request, project_id=None):
     }
 
     return render(request, 'pages/delete_project.html', context)
+
+
+def display_article_detail(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    context = {'article': article}
+    return render(request, 'pages/article_detail.html', context)
+
+
+@check_admin
+def display_add_article(request):
+    if request.method == 'POST':
+        article_form = ArticleForm(request.POST)
+        if article_form.is_valid():
+            article_form.save()
+            messages.success(request, "Article added successfully!")
+            return redirect('dashboard')
+
+    context = {
+        'article_form': ArticleForm(),
+    }
+
+    return render(request, 'pages/add_article.html', context)
+
+
+@check_admin
+def display_edit_article(request, article_id=None):
+    articles = Article.objects.all().order_by('-published_date')
+    article = None
+
+    if article_id:
+        article = get_object_or_404(Article, pk=article_id)
+        article_form = ArticleForm(instance=article)
+    else:
+        article_form = ArticleForm()
+
+    if request.method == 'POST':
+        if article_id:
+            article = get_object_or_404(Article, pk=article_id)
+            article_form = ArticleForm(request.POST, instance=article)
+        else:
+            article_form = ArticleForm(request.POST)
+
+        if article_form.is_valid():
+            article_form.save()
+            messages.success(request, "Article edited successfully!")
+            return redirect('dashboard')
+
+    context = {
+        'article': article,
+        'article_form': article_form,
+        'articles': articles,
+    }
+
+    return render(request, 'pages/edit_article.html', context)
+
+
+@check_admin
+def display_delete_article(request, article_id=None):
+    articles = Article.objects.all().order_by('-published_date')
+    article = None
+
+    if article_id:
+        article = get_object_or_404(Article, pk=article_id)
+        article_form = ArticleForm(instance=article)
+    else:
+        article_form = ArticleForm()
+
+    if request.method == 'POST':
+        if article_id:
+            article.delete()
+            messages.success(request, "Article deleted successfully!")
+            return redirect('dashboard')
+
+    context = {
+        'article': article,
+        'article_form': article_form,
+        'articles': articles,
+    }
+
+    return render(request, 'pages/delete_article.html', context)
